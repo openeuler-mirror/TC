@@ -826,3 +826,374 @@ b. 如果Greenplum社区上游在下个LTS(22.03)时已发布gpdb 7版本，会�
  议题八：插件式运维平台PilotGo项目介绍（杨昭）
  结论：因冲突取消
  
+2021年6月23日
+轮值主持人：马全一 eli@patch.sh [@genedna]
+下次主持人：石 勇 shiyong@kylinos.com.cn [@stonefly]
+
+与会人： 杨昭、侯健、刘金刚、王建民、胡欣蔚、李永强、程鑫鑫、李宝林、潘辰博（统信）、吴倚龙、曹志、章海剑、朱艳婷、马全一、熊伟、杨昭（麒麟软件）、王伶卓（普华）
+
+会议议题：
+议题一：确定openEuler社区移除过期SIG流程（曹志）
+结论：同意曹志提出的流程方案，将新流程发送到邮件列表同步信息。
+
+议题二：在openEuler 21.09创新版本上对GCC版本进行升级（9.3->10.3）（章海剑）
+结论：同意升级，并作为22.03 LTS gcc基线版本；
+
+议题三：Software Collections (SCL)软件多版本同时安装支持（潘辰博）
+结论：需要继续协调不同厂商继续讨论，建议通过会议、meetup等形式充分讨论。两周或一个月后在TC会议上汇报进展。 owner: 潘辰博
+
+议题四：openEuler doc SIG介绍（朱艳婷）
+结论：建议联合伙伴，合适的内容扩大宣传范围；宣传内容除了 openEuler 以外，操作系统相关技术、经验和业界动态都可以分享
+
+议题五：申请成立unikernel linux SIG（吴倚龙）
+结论：
+1. 当前诉求及场景较为独立，对openEuler当前版本演进及其他SIG交互较少，不建议现阶段成立SIG；
+2. 等工控相关领域进入社区后，共同讨论成立新SIG；
+3. 继续挖掘应用场景
+
+2021年6月10日openEuler Developer Day线下TC会议
+轮值主持人：李永强 liyongqiang10@huawei.com[@charlie_li]
+下次主持人：马全一eli@patch.sh [@genedna]
+
+与会人：郭寒军 侯健 胡欣蔚 刘金刚 李永强 马全一 石勇 王建民 王志钢 彭成寒 吴峰光 熊伟 叶青龙 王伶卓   刘吉林(麒麟) 李谦(麒麟) 郭建兴(麒麟) 陈亚强 许奇梦 郭大兴 朱艳婷 乔敏娜 朱延朋 胡峰 栾建海 袁志昌 刘恺 陈颖
+
+会议议题：
+议题一：TC委员更新，建议免去魏伟提名彭成寒作为新的委员，看护编译器、JDK
+结论：全票通过
+议题二：加速库SIG申请   许奇梦
+结论：原则同意成立acceleration libaray，建议命名为：arm-acceleration libaray，并将KAE SIG纳入。同意按照社区运作的规范新建项目AVX2Neon.
+后续跟踪：对于snappy、zstd需要确认为何不能直接贡献到上游社区？
+                   hyperscan的主导权在intel，后续邀请更多用户例如arm公司，往上游社区贡献
+议题三：Fuzzing SIG申请   郭大兴
+openEuler测试也在使用Fuzz，但测试问题定位较为复杂。
+结论：暂不成立，继续细化SIG的工作
+        i.建议放在Security SIG或者放在QA SIG进行落地
+        ii.建议获取外部更多的资源一起研究Fuzz技术，例如清华大学等
+议题四：golang引入1.10版本   侯健
+结论：可以通过升级或者寻找替代的方式解决；另外进入到recycle的软件是需要被移除的，所以需要主动通知用户。
+议题五：packaging SIG组运作介绍   陈亚强
+ i.升级计划：kernel从5.1进行小版本升级，gcc从9.3升级到10.3，glibc从2.33升级到2.34，binutils不升级，libmpc从1.2.0升级到1.2.1，gmp从6.2.0升级到6.2.1.时间节点为7.23号之前。
+ ii.衰退和退役原则讨论。在21.09版本中58个软件包会被退役。有工具进行检查社区活动状态，会后分享
+
+2021年5月12日TC会议：
+轮值主持人：
+刘金刚liujingang09@huawei.com [@liujingang09]
+下一次主持人：
+李永强liyongqiang10@huawei.com [@charlie_li]
+
+与会人：刘金刚、袁德俊、陈亚强、郭寒军、杨昭、石勇、马全一、卞乃猛、姜少涛、王志钢、王建民，胡欣蔚、程鑫鑫、陈棋德、叶青龙、魏东、王伶卓、侯健
+
+遗留问题跟踪： 
+1. 后续行业内核版本选型的情况同步给社区。[乃猛]               5分钟
+   背景：OS工作组 Linux选型，希望将openEuler的Linux kernel版本进入到OS WG中的选型名录。
+   下一步计划：寒军与曹晓琦交流
+
+会议议题：
+议题1：迁移sig组成立申请     叶青龙                            15分钟
+结论：SIG组成立评审通过，通过PR审批，成立后通过meetup宣传和推广
+
+
+议题2：sig-minzuchess 与 sig-raspPI sig-RISC-V 合作项目“石榴派”最新进展         袁德俊       15分钟
+项目链接：https://gitee.com/shiliupi/shiliupi99/ 石榴派
+RISC-V: https://gitee.com/flame-ai/siger   《SIGer》青少年开源文化期刊
+              https://gitee.com/shiliupi/RISC-V   第#4期《best RISC-V best LIFE》、第#10期 《南征北战》
+plan: 6月的社区展示申请一个游戏体验区，RISCV-JAVA应用适配
+
+议题3： openEuler OBS 构建 Project Config 及 spec 优化                    chenyanpan               30分钟
+内容：OBS 每次构建软件包会创建新的构建环境（build environment），在构建环境中 preinstall 一些必备软件包，然后 install 这些必备软件包及其依赖，以及 spec 中指定的 BuildRequires 及其依赖。当前 preinstall 安装多余软件包，部分软件包 spec 存在多余依赖，导致每次创建构建环境至少需要安装 300+ 个 rpm，占用空间 1.2GB，耗时 60+ 秒。需要对 Project Config 及 spec 进行优化，减少构建过程安装的 rpm 数量，避免 IO 资源浪费，缩短构建时间。
+同时去掉软件包 spec 多余依赖，避免安装时间、空间浪费，也避免安装多余 rpm 引入的安全风险。
+结论：TC 同意优化方案落地实施，具体步骤如下
+1. 先在 Mainline 工程上应用，chenyanpan 提供 Mainline 工程中因 spec 缺少依赖导致构建失败的软件包列表(约300个)，软件包责任人整改 spec 补充依赖；整改后再将优化的 Project Config 应用到 Mainline 工程。整改过程责任人可以先 branch openEuler-Mainline-copy 到个人工程进行开发验证。有些软件包可能由于缺少依赖包，构建结果为 succeeded 但功能存在缺陷，这类风险的软件包无法提前识别并规避，只能发现问题再解决。
+2. chenyanpan 提供依赖不合理的关键软件包列表，包括 rpm-build、pam、shadow 等，软件包责任人进行整改。
+3. 同时研究 OBS 复用构建环境方法（前期调研 OBS 不支持复用机制，可能需要通过修改 OBS 才能支持）。
+
+议题4： foreman建仓中大量包引入及废弃包的维护问题                       杨昭                            10分钟
+PR链接：https://gitee.com/openeuler/community/pulls/1748
+结论：TC同意创建软件包仓库。
+对于上游放弃维护的包，软件包仓库创建在对应sig组中，由sig组自行维护，也可在openeuler repo中创建源码仓库进行维护。
+foreman因为可能的CVE问题，最终发布产品放入到oepkg中，由用户自行评估风险使用。
+
+议题5： 移交autotrace、低版本jQuery和firefox至recycle或者永久备案不修复CVE           夏森林      15分钟
+背景：当前这几个包的CVE相关的issue日益增多，但是由于各自的原因，社区maintainer无法逐一修复：
+（1）  js-jquery1和js-jquery2：涉及CVE 3个，社区发布的大部分CVE的补丁是针对js-jquery3的，并不适用低版本，代码差距大，适配难度高
+（2）  firefox：涉及CVE 116个，其中7分以上55个，firefox79及后续版本引入了fdk-aac-free包，其license 为FDK-AAC。License 地址：https://fedoraproject.org/wiki/Licensing/FDK-AAC（网址中第3个license----NO PATENT LICENSE没有专利授权）；
+（3）  autotrace：涉及CVE 54个，由于社区无人维护，无法修复；
+结论：
+（1）同意不修复js-jquery1和js-jquery2的CVE，评估在SP2版本使用js-jquery3的替代方案的风险，建议在SP2中移除js-jquery1和js-jquery2。
+（2）同意暂不修复firefox的CVE，夏森林分析剥离fdk-aac-free的方案，可以通过剥离风险包的方式解决license风险问题，同时考虑替代方案，如使用chromium
+
+
+
+SIG运作情况分享：
+1. sig-OKD运作情况介绍       侯健 
+纪要：
+（1）sig-OKD与sig-CloudNative同步一下进展
+（2）争取在21.09创新版本发布
+
+2. Storage运作情况介绍        刘志强       
+纪要：
+- storage sig组要开始正常开展sig例会；
+- 多宣传，找外部合作伙伴一起探索更多场景；
+
+
+
+2021年5月5日
+因与五一假期冲突，TC例会顺延一周
+
+2021年4月21日TC会议：
+轮值主持人：
+姜振华zhenhua.jiang@huawei.com [@Ronnie_Jiang]
+下一次主持人：
+刘金刚liujingang09@huawei.com [@liujingang09]
+
+与会人：
+胡欣蔚、侯健、叶青龙、魏东、bzhaoop、Fan Zhang@China Telecom、keming、test1、润和 梁栋、石勇-麒麟信安、梁珂铭-麒麟软件、wangxiyuan、Naimeng Bian、Chenyanpan、Huangtianhua、姜振华、王建民、李自、刘金刚、卞乃猛、高琨、普华-王伶卓、杨昭、李永强
+
+上期遗留问题：
+1. 后续行业内核版本选型的情况同步给社区。[乃猛]
+进展：
+
+本期遗留问题：
+
+
+议题：
+1.OpenStack SIG 申报议题：
+申报人：黄填华
+介绍：
+a. openEuler多版本能力最终方案？
+b. OpenStack T版本之前只支持python2，SIG组计划在openEuler-20.03-LTS-SP2中优先支持OpenStack的Rocky版本，能否引入Rocky版本到openEuler-20.03-LTS-SP2的EPOL仓？
+
+议题1结论：
+1. python2的策略还是继承前期的结论，新的社区版本不再包含python2，EPOL仓库里也不再放置python2相关软件包，相关软件包可以放置在oepkgs仓库。
+2. 策略讨论：
+    放 oepkgs：青龙，乃猛，侯健，建民（明确维护者），振华，熊伟，永强，金刚（和客户交流时说明维护风险和迁移计划）
+        由 openStack SIG 开发维护，openEuler 社区使用验证
+    放 EPOL: Fan Zhang，陈硕
+    TC 讨论决策 openstack 软件包软件放在 src-openeuler，二进制放在 oepkgs。
+
+2.windows 应用兼容SIG组建申请
+申报人：梁珂铭3
+介绍：希望在openEuler成立Winapp兼容性SIG组，把大量windows应用移植到openEuler系统上。
+议题2结论：
+同意应用兼容SIG组建申请，但名字需要再重新讨论一下。
+基于当前 PR 刷新，梳理多领域合作方式。
+
+3.向openeuler社区开源两款自研桌面应用“截图录屏”和“画板”的计划同步
+申报人：魏东
+介绍： 截图录屏和画板是2款高效的自研桌面应用，现计划开源到openeuler社区，特向TC成员同步适配计划
+议题3结论：
+同意2款软件引入openEuler社区，如果能测试解决多桌面之间的兼容问题，则建议归入 desktop-app 管理；如果当前还存在技术限制，则建议先归入 DDE 管理。
+具体版本发布计划与Release Management SIG组讨论。
+
+4.openEuler支持多版本软件包方案及分支命名规范变更说明
+申报人：夏森林
+介绍：为了支持openEuler集成多版本软件包，我们在前期调研了红帽系的appstream概念，并为之设计了大体方案。后面在吴峰光大牛的建议下，又分析了debian/Ubuntu的支持多版本的做法，特别是其中对于soname的约束以及多repo的形式，更加符合openEuler当前构建和发布的状态，因此我们又设计了新的方案。相比appstream，新方案大大弱化对OBS构建系统的改造要求，但是对社区开发者有一些新的规则需要遵守
+议题4结论：
+今天TC会议暂不给决策意见，建议线下与各OSV，ISV讨论清楚。
+
+5. Sig compliance组议题申报：“张飞”门禁与openeuler社区CI工具jenkins的集成流程方案
+申报人：杨聪
+介绍：“张飞”门禁是一款license扫描工具，基于源码/文本文件中的license文本信息进行匹配，能够识别出软件中的license文本信息，为了支持openEuler引入软件时识别软件中的license信息，引入“张飞”门禁工具集成到openEuler社区CI上。
+议题5结论：
+先灰度上线使用，审视流程、工具是否存在问题。
+
+6.SIG运作审视
+sig-aarch32：
+1. 在openEuler微信公众号上，多宣传工作成果；
+2.与iSula SIG组的兄弟多互动；
+
+==============================================================================================
+
+
+2021 年 4 月 7 日 TC会议：
+轮值主持人：
+胡欣蔚huxinwei@huawei.com [@shinwell_hu]
+下一次主持人：
+姜振华zhenhua.jiang@huawei.com [@Ronnie_Jiang]
+
+与会人：
+     卞乃猛、刘金刚、统信-潘晨博、统信-叶青龙、王建民、李永强、石勇、冯建、高琨、侯健
+    
+遗留工作：
+    1. 后续行业内核版本选型的情况同步给社区。[乃猛]
+
+议题：
+1. 创建 sig Xenomai
+         申报人：郭皓
+         介绍：本SIG组将会把Xenomai方案引入openEuler社区中，并对常见的工业控制现场总线进行迁移、适配和优化，将openEuler打造成可以应用于工业控制领域的操作系统。
+         讨论建议：TC建议以垂直行业解决方案来牵引SIG的发展，建议将 SIG 命名改为 sig ICS (Industrial Control System)。
+             preempt-rt 对内核当前的发布有影响，可以在 4/9 的kernel meetup上做个讨论。
+
+2. openEuler 开发者大赛参与方式讨论：
+      申报人：程鑫鑫
+      讨论建议：TC委员可以作为最终评委的候选人。
+       Maintainer不能作为奖品。
+       半决赛5个题目，由相应的maintainer作为导师。
+
+3. SIG运作审视，
+     embeded：
+         50多个软件包完成拆包，需要提相应的PR到软件包本身，和包的维护者讨论
+         有些软件包内存在不同版本so，需要在保持兼容性的前提下做清理，也建议和包的维护者讨论。
+     bigdata sig：郑振宇
+         张浩 负责的 Apache BigTop当前在openEuler上遇到基础设施问题。胡欣蔚帮助联系协调推进。
+          郑弦 和 release sig 了解下各个版本分支的创建和管理方式。解决 软件包 的发布集成的问题。
+     ROS：
+       一些额外依赖不能满足
+       一些额外依赖已经存在
+     建议release sig 考虑办一次meet up，加强线下沟通。
+      
+2021 年 3 月 24日 TC会议:
+
+轮值主持人： 侯 健houjian@kylinos.cn [@hjimmy]
+下一次主持人： 胡欣蔚<huxinwei@huawei.com> [[@shinwell_hu]
+
+与会人：
+       侯健、杨昭、卞乃猛、陈棋德、普华-冯建、石勇-麒麟信安、赵波、李永强、耿其虎、胡欣蔚、统信-潘晨博、熊伟、叶青龙、刘金刚、郭寒军、王建民、姜正华、江新宇、王志刚、吴峰光、程鑫鑫、曾卫峰、李秋雨
+
+TC成员请假：马全一
+
+议题：
+    1. 创建sig-rust
+申报人：马全一、卢景晓
+概述：当前社区rust库及工具链缺乏，无sig组承载。希望在社区中引入及孵化rust应用
+结论：1. 仅维护rust基础库等，rust应用放入相关sig组
+2. rust编译链维护在sig-compiler
+3. 推进rust CVE修复
+4. 暂时无具体rust应用孵化计划
+    2.  openEuler社区是否开启rredhat satellite、suse Manage 之类软件的开发，是否移植spacewalk、foreman等运维管理软件？ 
+     申报人：侯健
+     概述：介绍主流商业运维软件：foreman、suse manager、redhat satellite，麒麟软件预计6月1日可移植foreman到2003LTS SP1，引入之后独立发展。
+     结论：
+1. 社区需求强烈。
+2. 熊博建议社区自研，可闭门会议，与华为智能运维讨论，详细讨论方案设计等。可以引入foreman，后期考虑孵化社区自有项目。
+3. foreman发布需要与sig-release同步一下计划。
+4. 考虑foreman订阅模式在社区中使用的开放模式。
+5. 侯健牵头组织相关人员，专门讨论在社区中运维管理软件研发/引入。
+    3.  DB SIG运作新策略讨论
+    申报人：郑振宇/赵波
+      概述：以新的方式运作DB SIG并拓展新成员，如何将上游能力引入openEuler社区及如何提供解决方案级别的能力建设讨论。
+现状：1. 人数较少。2. 无专家参与，无法自主发展DB领域生态。
+需求：社区上游ARM优化回落openEuler社区软件包。在openEuler社区自主发展DB领域生态
+初步计划：
+第一步：希望吸引外部贡献者，完善软件生态
+第二步：以博客/白皮书等，扩展DB在openEuler的商业解决方案
+第三步：发展自主可控平台，引入更多数据库生态（如AP数据库等等）。
+运作方式：
+开源方式运作，与国产化诉求厂商或上游社区合作，加入SIG，共同参与openEuler社区。
+另，策划5月9日 以openEuler DB SIG名义在杭州举行meetup，邀请 ·沃趣、mariaDB Foundation参加，对于其他有意向参与的人员发起邀请函。
+项目计划及落地目标：
+对标app stream，引入db多版本支持。原则，最新版(优化版)引入openEuler创新版，LTS版支持DB软件包多版本发布。
+第一阶段：21.09引入ARM优化最新DB版本和db上游稳定版本，20.03 LTS 支持所有db上游主力版本，长期支持
+第二阶段：22.03 LTS 支持所有DB上游主力版本，支持openEuler LTS版本间升级，22.09引入上游新版本
+当前初步任务：
+    1. 上游ARM优化版本(最新版)落入21.09 openEuler创新版。包括MariaDB, PostgreSQL, openGauss, Mysql。
+    2. 现有数据库内核周边生态工具引入。包含MySQL/MariaDB及PostgreSQL/openGauss周边工具
+结论：
+1. 与夏森林对接app stream，讨论多版本支持方案
+2. 与程鑫鑫对接宣传
+3. 联系国内DB厂家，与陈棋德联系，5月9日可邀请讨论
+4. 着手展开DB SIG内部初步工作，包括SIG owner exchange, 现有软件包梳理及维护责任。
+其他：
+李永强在dev发邮件通知app stream方案，后续相关方讨论
+与马全一沟通宣传方式及求助渠道。
+    4. 申请openEuler发布i686版本，解决centOS等OS替换过程中32位版本兼容问题
+      申报人：曾卫峰
+      概述：包含工程适配、软件包适配、解依赖，工程量大
+结论：
+1. 需要与开天讨论项目运作，是否引入新sig组
+2. 内核态32位支持已确认
+3. 并不出32位版本，仅用于支持运行32位应用。
+    5.  openEuler-20.03-LTS-SP1分支升级：tpm2-tss从2.4.1-2.oe1升级到3.0.3-1.oe1；tpm2-tools从3.1.1-8.oe1升级到5.0-1.oe1    
+       https://gitee.com/src-openeuler/tpm2-tss/issues/I37W7T?from=project-issue  
+       申报人：耿其虎
+概述：需要升级新版本，使用tss tcti-swtpm库。
+结论：1. 有接口变更，无删除。无明确社区用户。
+2. 与osv厂商讨论之后再确认升级事宜。麒麟后期会与安全sig对接。
+
+
+
+
+
+==============================================================================================
+
+2021 年 3 月 10日 TC会议:
+
+轮值主持人： 冯建 jian.feng@i-soft.com.cn[@hostfj]
+下一次主持人： 侯 健houjian@kylinos.cn [@hjimmy]
+
+与会人：
+高琨、王建民、侯健、程鑫鑫、冯建、刘金刚、卞乃猛、石勇、李永强，郭寒军、叶青龙、杨昭
+
+TC成员请假：
+
+
+1. 上次遗留问题：
+1）更新软件包退出规则
+   概述：软件退出规则较为刚性，导致一些广泛使用的软件无法继续使用.对于长期稳定和非业务路径的软件，建议维护一个例外软件清单。
+   结论：需要进一步梳理以及建立规则，下次再讨论。
+胡峰： 建议增加几个维护团队，责任主体由packaging SIG组负责。TC负责审批软件的退出申请。建议被社区广泛使用的工具纳入例行软件清单。
+刘金刚: 建议TC只审核与规则不一致的情况，其他流程在PR中审核即可。
+  熊博：整体流程可以，比好的流程应该有个一输入点，packgingSIG先筛选，筛选过后交由TC审核。此外操作流程应该再细致一些，工程化一些。
+
+2. 会议议题
+1) LTS-SP1版本中golang组件升级影响分析revie              申报人：李翔/敬锐
+2)合规网站建设进展汇报                 申报人：高琨、郑志鹏
+3)SIG-HA的RoadMap细化及Maintainer变更              申报人：侯健
+4）openEuler 20.03 LTS SP1/SP2 KABI 兼容性列表 Review             申报人：谢秀奇、陈洲        
+5）LTS-SP1版本中isula-build组件升级影响分析review               申报人： 李翔/卢景晓
+6） sig-ONL介绍及讨论                       申报人：luanjianhai
+7） sig-ops介绍及讨论                     申报人：luanjianhai
+8）openEuler 引入appstream支撑多版本软件包方案宣讲            申报人： 夏森林
+
+3. 议题讨论记录
+1）1) LTS-SP1版本中golang组件升级影响分析review
+  概述：golang组件在LTS-SP1版本中因CVE漏洞修复及TLS加密协议过期等原因带来组件安全风险，需要通过升级版本方式解决，升级影响同步社区评审review；
+  熊博： 升级后对底层依赖库的关系影响以及上层基于go语言的包的影响需要经过验证，建议需要做一个列表，哪些软件包使用了go语言，相关的spec可能需要重新修改。如果遇到依赖冲突的问题，需要报告给对应的包管理员。
+
+2)合规网站建设进展汇报
+  概述：来自SIG-compliance，合规网站（名字‘貂蝉’）建设进展汇报，当前可以通过该网站查询license的相关信息。 网站上线时间初定为3月20日。
+  熊博：建议提供中文版说明，以免因为语言差异造成误解。单纯的法律条文太过生涩，最好能提供案例解析。
+
+3)SIG-HA的RoadMap细化及Maintainer变更
+  概述： HA SIG 迎来航天网信、天固信安等公司来共同研发，Maintainer人员需要变更； HA SIG的 RoadMap 的细化，下一期需求涉及容器、DRBD等相关技术的结合，寻求更多的人参与。
+讨论过程：
+侯健对HA软件和应用场景做了简介
+  杨昭对HA SIG进展做了汇报，相关文档已经放入了openeuler/docs
+  航天网信马俊杰做了简单介绍，并有意假如HAsig组
+  天固信安蒋涛做了介绍和未来对HA的贡献规划
+  熊博： 这个软件本身在麒麟是商用的吗？
+侯健：目前是创新版本，后续成熟之后会选定一个高质量的商用版本。
+熊博：建议总结一些商用案列，后续在公众号推广。
+
+4）openEuler 20.03 LTS SP1/SP2 KABI 兼容性列表 Review
+  概述：根据前期沟通，OSV、驱动兼容性SIG都对内核接口兼容性提出了诉求。根据前期沟通的信息，以及收集的驱动接口使用情况，形成一份 20.03 LTS SP1 SP2 兼容
+性 KABI 白名单初稿，请大家评审。
+
+  链接：https://mailweb.openeuler.org/hyperkitty/list/kernel@openeuler.org/thread/I5YP7JHDQPRHDOOBGIBCONLPERPE2QL2/
+结论
+1. 需要与OSV以及硬件厂商做详细名单的确认；
+2. 需要对驱动做溯源（需求来源），这要在变更时做沟通；
+3. 白名单目前太多，约2700左右，而业界OSv一般在600左右，我们需要进一步考虑能否做这个规模白名单的支持承诺
+
+
+5）LTS-SP1版本中isula-build组件升级影响分析review
+  概述：isula-build在openEuler 20.03-LTS-SP1中版本存在bug需要同步。因为两个版本之间涉及重构，代码量大，在回合patch方面存在困难，所以申请在openEuler 20.03-LTS-SP1 中进行小版本升级 0.9.4 ==> 0.9.5
+  熊博：只要对外接口没变化，内部代码的变化对用户没有影响即可，注意代码质量。
+
+6） sig-ONL介绍及讨论
+  概述： Roadmap澄清及组织如何运作
+
+
+7） sig-ops介绍及讨论
+  概述：A-Ops Roadmap、A-Ops 整体架构、A-Ops 如何运作与产品联创
+ 熊博：建议SIG例会定期开展，多和厂商讨论方向和诉求。
+
+8）openEuler 引入appstream支撑多版本软件包方案宣讲
+  概述：CentOS8 引入了应用程序流的概念，与核心操作系统的软件包相比，这些组件更频繁交付与更新版本，这为定制CentOS提供了更大的灵活性，而不影响平台或特定部署的底层稳定性。这些组件可以作为应用程序流打包成标准的RPM包或者模块，并通过CentOS8中的AppStream仓库交付。openEuler计划也引入appstream来支撑多版本软件的的构建、测试和发布。
+侯健：建议和koji有后续的结合
+熊博：建议各OSV的研发力量和集中起来，避免重复造轮子。后面拉个会，召集个OSV把整个流程逻辑梳理一遍。后续关注三个问题：方案是什么，影响是什么，何时落地。
+结论：
+后续召开专题会议共同讨论。
+
+
+
