@@ -1,0 +1,35 @@
+11月2日 TC 会议议题
+
+0. 过往遗留问题回顾
+  - Maven 仓库构建。曹志反馈服务还在构建中，预期两周左右能完成。
+  
+1. OpenResty SIG 成立申请  提案人：马俊杰 Joey Ma <majunjiev@gmail.com>
+ PR 见  https://gitee.com/openeuler/community/pulls/1240
+ 
+2. Wayca SIG 成立申请 提案人：宋宝华 song.bao.hua@hisilicon.com，徐威
+ PR 见 https://gitee.com/openeuler/community/pulls/1311
+ 
+3. gala OPS SIG 成立申请 提案人：陈亚强
+  PR 见 https://gitee.com/openeuler/community/pulls/1283
+
+4. SDN sig 成立申请 提案人：栾建海
+  PR 见 https://gitee.com/openeuler/community/pulls/1249
+  
+5. SP1兼容性问题讨论 提案人：侯健 hj19870806@163.com
+  Issue 见 https://gitee.com/openeuler/release-management/issues/I27OAE?from=project-issue
+  
+6. openEuler 社区补丁管理规则讨论 提案人：李次华
+  Issue 见 https://gitee.com/openeuler/community/issues/I27H0Z?from=project-issue
+  
+7. openEuler 社区上游停止维护软件维护策略再讨论 提案人：李次华
+  PR 见 https://gitee.com/openeuler/community/pulls/1171
+  
+8. 如何规范 sig 组配置信息方案 提案人：曹志
+    背景：当前网页展示、会议预定、邮件通知、ci-bot做门禁检查、添加仓库等基础设施相关操作都依赖于SIG组信息的准确性；
+         目前在community/sig目录下有sig.yaml文件明确了该sig组管辖的仓库集，该目录下有各个sig组的子目录，其中一个OWNER文件也明确给出了sig组maintainer名单。
+         但是sig组的联系方式（邮件列表地址）放在readme中的，该文件 a、书写格式比较随意，难以准确提取有效信息，b、部分sig组未明确提供该字段；
+         另外OWNER文件中的名单和readme中提供的名单有出入也会给开发者带来困扰。
+建议：规范sig组配置信息
+         方案一：对README文件的书写格式给出规范，明确比填字段，明确字段名称和格式，便于各系统准确获取。
+         方案二：使用更容易格式化管理的yaml文件替代README，也给出书写格式规范。
+         方案三：继续保持当前现状，完善各应用的信息提取功能，尽可能准确提取相关信息。
