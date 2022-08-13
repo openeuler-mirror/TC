@@ -1196,4 +1196,339 @@ TC成员请假：
 后续召开专题会议共同讨论。
 
 
+=============================================================================
+2021 年 2 月 24日 TC会议:
 
+轮值主持人： 郭寒军guohanjun@huawei.com [@hanjun-guo]
+下一次主持人： 冯建
+
+与会人：
+卞乃猛，王建民, 郭寒军，刘金刚，胡欣蔚，熊伟，侯健，李永强，陈 衎，Dilon，Eric Yuan，曹志，高琨，Hou Yue，胡峰，姜正华，jl，King Gao，明沛，张少杰, 王志刚，魏伟，吴峰光，张伟，周中元，朱延鹏，朱艳婷，屈晟，潘晨博，荣誉，卞乃猛，魏东，叶青龙，袁德俊，罗檬，江新宇，高建水，Clement Lee，杨聪，石勇
+
+TC 成员请假：
+马全一, 冯建
+
+1. 上次遗留问题：
+1）开源license的解读和风险。  负责闭环：高琨
+结论：准备做一个网站，方便大家查阅。这个网站已经在开发中了，计划3月上线。
+
+2. 会议议题
+1）申请创建生物信息学特别兴趣组SIG-BIO         申报人：陈 衎
+2）licesne和copyright扫描工具演示，用于识别license和copyright   申报人：高琨
+3）依赖包停止维护的软件包如何操作更为合理。申报人：李永强
+4）再生电脑是否可以成为一个SIG         申报人：袁德俊
+5）go-compilers软件包移入sig-recycle导致的部分golang宏无法使用   申报人：潘晨博
+6）redhat-menus软件包移入sig-recycle导致的部分kde缺少编译依赖，申请提交openEuler-menus  申报人：潘晨博
+7）知会基础设施已上线bugzilla系统，讨论后期配置使用策略        申报人： 曹志
+8）Community review 工具使用方法说明           申报人： 胡core
+9）更新软件包退出规则           申报人：胡峰
+10）openEuler构建工程清理规范           申报人：胡峰
+
+11) LTS-SP1版本中golang组件升级影响分析review.  申报人：李翔/敬锐
+
+3. 议题讨论记录
+
+1）申请创建生物信息学特别兴趣组SIG-BIO         
+熊伟：biolinux 有 500多个软件包？我们能不能在21.09上追平biolinux？
+kan-chen：感觉定60款也是比较挑战的，可能运作进入轨道后会比较快一些。
+熊伟：建议在HC大会上发布
+侯建：生信软件是否对图形显示的要求比较高？是否对openEuler的UI有诉求？对特殊硬件（显卡）的适配有没有诉求？
+通过SIG例会运作等，逐渐形成BIO完整平台的solution。
+按照场景的角度，在21.09版本发布中做一个梳理，形成独立的端到端解决方案。
+PR的maintainer需要更新，与gitee ID对应。
+导师 - 侯健，叶青龙
+PR 通过，正式建立后，尽快开始正式运作
+
+2）licesne和copyright扫描工具演示
+使用场景：存量软件license的清理，新引入软件license的分析
+1. 把软件做成一个解决方案，能与周边配合，单独使用；
+2. 与openEuler CI连接起来。
+
+3）依赖包停止维护的软件包如何操作更为合理。
+概述：类似deepin-manual软件包由于python2不再维护导致其不能成功编译，需将其移入sig-recycle。针对此类场景如何操作更为合理？
+背景：https://gitee.com/openeuler/community/pulls/1590
+   openEuler社区当前软件包退出原则详见： https://gitee.com/openeuler/community/blob/master/zh/technical-committee/governance/software-management.md
+结论：
+整体按照已经发布的原则来处理：
+由于软件的依赖包在上游社区停维或者不活跃，并且
+1、社区sig没有意愿继续维护的软件包统一放入recycle，并且从社区版本发布中删除
+2、社区sig有意愿继续维护，则不做移入recycle的操作，社区对应sig推动快速解决依赖包带来的影响；解决后及时合入到社区版本(未来发布和已发布的LTS&SP)中
+case by case看这个PR：https://gitee.com/openeuler/community/pulls/1621
+这个软件包不带入21.03版本，其它后续版本视上游社区问题解决情况来定；
+但是需要统信的DDE-sig组将此包合入到统信的版本中
+
+4）再生电脑是否可以成为一个SIG
+背景：https://gitee.com/openeuler/community/issues/I38AJY
+SIG-RECYCLE 重名了
+Reborn computer 重生，比较文艺
+Renewable computer 可再生是一个技术方向
+Renewed computer. 现在翻新的电脑，RCTo(加拿大计算机教育组织)，亚马逊也有一个翻新电脑服务。
+（2，再聚合些资源，1，先从树莓派开始，低性能电脑和桌面。）
+     shinwell：有没有合适的捐献途径？我有好几个rp 3B的板子可以捐献
+     那就用您的PI，做种子派。特别有意义。我回头发个ISSUE。谢谢您:D 没问题 :handshake:
+     我来和几个教育组织对接下。做成范例。:pray:
+
+5）go-compilers软件包移入sig-recycle导致的部分golang宏无法使用。
+如题，需要修改多个包的编译依赖，同时还需要重新适配spec。针对此类问题如何统一修改申报议题进行讨论。
+背景： https://gitee.com/src-openeuler/go-compilers/issues/I2ALEV?from=project-issue
+结论：go-compilers软件有替代方案，后续需要尽快合入版本中避免同样的问题再出现，当前已经修改过的包不需要再反复修改
+如何将此类问题在提交pr的时候做相关评审？
+熊博：在pr检视checklist中增加对移入sig-recycle包的替代方案步骤评审
+如何快速在主线分支发现同类问题？
+胡峰：obs 主线工程提供编译失败邮件通知，及时响应类似问题
+
+6）redhat-menus软件包移入sig-recycle导致的部分kde缺少编译依赖，申请提交openEuler-menus。
+该包后续发展方向？
+目前修改包名，代码继承redhat-menus，后续针对改包功能做详细分析，在openEuler做自研发展
+该包cve的更新策略是什么，上游redhat-menus cve是否同步？
+目前阶段先同步，待对该包做了openEuler社区自研修改后经过maintainer筛选合入
+熊博：该包是否通用与dde和ukui？
+改包是kde底层依赖，ukui与dde可以共同使用
+
+7）知会基础设施已上线bugzilla系统，讨论后期配置使用策略  
+结论：内核先开始试用，试用一个月，使用期间问题在gitee issue和bugzilla需要同步，后续决定是否全部迁移到bugzilla，再对接CVE等系统
+
+8）Community review 工具使用方法说明 
+结论：TC委员/Reviewer按照审视要求清单去review
+
+9）更新软件包退出规则
+  概述：软件退出规则较为刚性，导致一些广泛使用的软件无法继续使用.对于长期稳定和非业务路径的软件，建议维护一个例外软件清单。
+结论：需要进一步梳理以及建立规则，下次再讨论。
+
+10）openEuler构建工程清理规范
+  概述：社区软件和参与者越来越多，openEuler构建后台存在大量私人工程，影响整个社区效率，新增编译工程管理规范（OBS）
+结论：按照提议规则进行，在每个清理阶段之前发邮件通知，后续部分复用软件所资源
+
+11) LTS-SP1版本中golang组件升级影响分析review
+概述：golang组件在LTS-SP1版本中因CVE漏洞修复及TLS加密协议过期等原因带来组件安全风险，需要通过升级版本方式解决，升级影响同步社区评审review；
+申报人：李翔/敬锐
+
+TC委员会的两个月过渡期已经满了，从今天起各个委员都可以进行PR的approve工作。
+
+=======================================================================================
+2021 年 2 月 3日 TC会议:
+
+轮值主持人： 陈棋德dillon.chen@turbolinux.com.cn[@dillon_chen]
+下一次主持人： 冯建
+
+与会人：
+   卞乃猛、陈棋德、马全一、刘金刚、高琨、王建民、冯建、叶青龙、熊伟、郭寒军、侯健、杨昭、李永强
+
+TC 成员请假：
+、石勇胡欣蔚
+
+1. 上次遗留问题：
+安全委员会wiki，社区漏洞管理
+1. 基于社区漏洞处理策略和流程，举一个实际case，说明如何完成一个漏洞的处理
+2. 安全委员会文档提供英文版
+    
+2. 会议议题
+1) 常用的40+款license的权利、义务、限制的解读。  申报人：高琨
+2) 分支同步工具 sync-bot 介绍。  申报人： 陈燕潘
+
+3. 议题讨论记录
+
+1) 常用的40+款license的权利、义务、限制的解读：
+合规组工作目标，openEuler目前有70，openEuler社区要不断的增加该list，希望各位贡献者提供清单里面没有的license
+遗留问题：license之间的兼容性问题
+
+2) 分支同步工具 sync-bot 介绍：
+熊博：建议各OS厂商熟悉一下sync-bot的使用。
+熊博：对于spec的解析，可以考虑在我做的pumper基础上完善，便于spec的解析。
+
+熊博：后续会议如果时间充裕，考虑对SIG的运作进行监督和审视。
+
+2021 年 1 月 20日 TC会议:
+
+轮值主持人：卞乃猛bian_naimeng@hoperun.com [@biannm]
+下一次主持人： 陈棋德
+
+与会人：
+   卞乃猛, 胡欣蔚、刘金刚、陈棋德、王建民、李自、姜振华、侯健、杨昭、高琨、袁德俊、叶青龙、马全一、 熊伟、冯建、李永强
+
+
+1. 上次遗留问题评审
+    1)需要将新的TC委员申请小程序会议权利（熊伟负责跟踪闭环）
+       已经完成
+
+     2)考虑使用自动化软件对中文进行翻译，特别是SIG和社区的各种文档（该遗留问题由马全一进行跟踪闭环）
+        已经放到老马的TODO List里面了。可以探讨的方向： 各国的开发者用母语沟通，用自动化翻译工具进行翻译。
+        1. DeepL Pro 需要付费
+        2. Google Translate 对于大量文档翻译需要 API
+        3. Huawei Translate 外部无法访问
+
+    3)安全漏洞: 相关安全的流程提交到安全委员会的相关文档中，作为正式的流程规范定下来。更新完相关文档以后发邮件到tc和dev邮件列表通报社区。（责任人：刘金刚）
+        目标： 月底(1/31)前完成文档，放到WIKI上。
+
+2. 会议议题
+1) 申请sig-compliance组。  申报人：高琨
+2) 申请CloudNative SIG。  申报人： 蔡灏旻 
+3) openEuler社区软件包退役规范review。 申报人：陈亚强
+4) openEuler社区开源License检查管控策略，公示方案的谈论 。 申报人：范佳臣
+5） 邀请openeuler社区为支持单位，sig-minzuchess组的两个仓进行开源程序竞赛。申报人：王建民，袁德俊
+      支持内容：
+      - openEuler 还是 社区，还是 华为，主体不明确？ 马全一 shequ shengtai社区生态
+      - 使用 openEuler 推荐的开源协议，开发
+      - 交付的基础服务？ISO - IMG 下载
+     - BUILD - IN 支持
+     - 树莓派硬件
+     
+3. 议题讨论记录
+
+SIG-COMPLIANCE 申请
+PR: https://gitee.com/openeuler/community/pulls/1459
+
+      胡欣蔚： 
+          当前 openeuler-jenkins 项目归属 sig-Gatekeeper
+          openEuler 之前走过一些弯路，比如 jenkins 一些工具曾经归属是 sig-EasyLife 中的 openEuler-Advisor，后来为了方便 jenkins 集成而移动，再后来又因为要共享要移动出来。
+          sig-Compliance 可以从中吸取教训。
+
+结论： 同意成立COMPLIANCE SIG组
+
+      遗留问题：邀请一下法务的人员进入SIG组  @高锟
+      
+SIG-CLOUDNATIVE 申请
+PR: https://gitee.com/openeuler/community/pulls/1487
+
+      胡欣蔚： 
+         容器镜像的维护，和镜像仓库服务的管理，都由sig CloudNative负责
+      
+     结论： 同意成立CLOUDNATIVE SIG组
+     
+     遗留问题：在PR上更新大家的意见，如： SIG组的职责，路标等。 @蔡灏旻
+     
+软件包退役规范
+
+      熊core：
+          1). 衰退的定义要定义清楚， 比如： 即使上游社区没有更新的 好用的小工具， 未必 要清除？
+          2). 明确公示的对象，公示的方式，公示的时间节点
+          3). 建议在关键节点检查时可以导入工具。
+   
+       胡欣蔚:
+         1). 整个流程要细化，关键节点需要明确评审方式和责任人
+
+     结论：流程细化后 通过邮件 发到社区讨论
+    
+     遗留问题: sig-recycle 的OWNER应该是当前的 TC 委员。需要刷新 -> shinwell_hu 提 PR
+
+开源LICENSE管控策略探讨
+
+     熊Core
+       1) 友好清单的分类的命名方式： 不建议用Good/Bad方式
+       2) License的策略可以从多维度考虑：如 是否进入社区，是否进入LTS Release， 进入LTS Release后进行风险提示
+   
+      胡欣蔚
+        1) 采用宽进严出的思路
+        
+     王建民：赞同胡欣蔚的宽进严出的思路。尤其是对于 SSPL 这类有争议（不同社区方态度不相同）的协议，从进入社区角度建议宽容一些。
+
+     结论： 列表暂不公示；同意门禁增强； 在检查失败后需要Compliance的成员进入讨论判断。
+     
+     遗留问题：该议题放到 SIG Compliance组来进一步讨论   @高锟，范佳臣
+     
+sig-minzuchess组的开源程序竞赛
+
+     结论：活动以openEuler社区的名义参与
+     
+     遗留问题
+       BUILD-IN的支持联系一下 老马，从生态角度探讨是否可以支持。
+
+
+2021 年 1 月 6日:
+
+TC 委员培训
+
+TC 例行会议每两周举行一次，主持人负责会前议题收集，会议室申请，会议通知发布，会议主持，遗留问题跟踪等工作；下一次会议的主持人负责本次会议的会议纪要整理归档。
+TC 委员需要在小程序中申请 权限，便于使用小程序申请会议室。
+会议纪要在线记录 使用 https://etherpad.openeuler.org/p/TC-meetings
+建议轮值顺序：
+熊 伟xiongwei888@huawei.com [@myeuler]
+卞乃猛bian_naimeng@hoperun.com [@biannm]
+陈祺德dillon.chen@turbolinux.com.cn [@dillon_chen]
+冯 健jian.feng@i-soft.com.cn [@hostfj]
+郭寒军guohanjun@huawei.com [@hanjun-guo]
+侯 健houjian@kylinos.cn [@hjimmy]
+胡欣蔚huxinwei@huawei.com [@shinwell_hu]
+姜振华zhenhua.jiang@huawei.com [@Ronnie_Jiang]
+刘金刚liujingang09@huawei.com [@liujingang09]
+李永强liyongqiang10@huawei.com [@charlie_li]
+马全一eli@patch.sh [@genedna]
+石 勇shiyong@kylinos.com.cn [@stonefly]
+王建民jianmin@iscas.ac.cn [@jianminw]
+王志钢wangzhigang17@huawei.com [@cellfaint]
+彭成寒pengchenghan@huawei.com [@wweiandrew]
+吴峰光wufengguang@huawei.com [@wu_fengguang]
+叶青龙yeqinglong@uniontech.com [@yeqinglong01] 
+
+openEuler 是社区推动的开源项目，作为 TC成员，您的投入非常重要。请善用gitee的通知功能，建议绑定微信账号或者邮件账号，并在 https://gitee.com/profile/notifications 设置通知，以便及时了解相关动态。 如果您更倾向于“轮询”模式，而不是在”中断”模式下工作，那建议在每天固定的时间登录 gitee。
+openEuler 的代码管理权限集中在 ci-bot ，即便您是 maintainer ，也不能直接操作被保护的代码分支。您需要在 PR 中通过 comment 和 ci-bot 交互来完成 review 工作。 请阅读 https://gitee.com/openeuler/community/blob/master/en/sig-infrastructure/command.md 以了解如何指挥 ci-bot。
+openEuler 重视每一个组件，每一行代码。您对 PR 的 review ，决定了 openEuler 的质量。 为了显性化 review 过程，我们也建议您使用并参与完善 review_tool。 代码地址在：https://gitee.com/openeuler/openEuler-Advisor/blob/master/advisors/review_tool.py
+TC 同时兼任 sig-recycle 的 maintainer，这个 sig 是为了保证确认要从 openEuler 中删除的软件有过渡期而设置。
+
+ - 讨论：
+   1. 建议TC委员每天都安排时间review，3月之前新委员只做 /lgtm 的 review，让熊伟和胡欣蔚负责 /approve
+   2. 建议TC委员每周抽时间旁听SIG的运作会议，了解进展
+   3. TC 委员对 community 仓的工作不分工，TC委员需要对整个社区的运作有一个全面的了解。
+   4. 对于PR的review，对于PR不完整，描述不清晰的要坚决打回修改。要重点审视license等合法，合规信息。
+   5. TC例会的主持按照姓氏排名进行，下一次由润和的卞乃猛主持TC会议
+   6. 需要将新的TC委员申请小程序会议权利（熊伟负责跟踪闭环）
+
+   
+SIG-EMBEDDED 申请
+
+PR 见 https://gitee.com/openeuler/community/pulls/1430
+
+普华-冯建对所有人说： 11:19 AM
+建议：1.系统层面对软件进行裁剪优化，嵌入式版本独立建仓，或者做成img。2.kernel提供rt版本。
+
+润和-卞乃猛：
+建议：
+1.  针对sig-embedded的成立： 呼吁大家一起努力将更多的硬件厂商加入到社区开发； 第一步交付件的范围要明确
+2.  建议用英文翻译机器人
+
+jianminw:
+    1. 建议明确目标的设备列表
+    2. kernel 基于 openEuler 主线内核仓库来定制裁剪
+
+熊伟（myeuler):
+    1. embeded系统的关键是构建build系统，可以参考行业的yacto等系统，考虑建立openEuler的嵌入式完整的构建系统，从而实现openEuler从端，边，云的全场景覆盖
+    2. embeded的SIG覆盖范围还应该是能够容纳完整OS的系统，而不是资源极度受限的小型设备。
+    3. 要保持和openEuler LTS的共基线，基于现有的内核版本等进行构建。
+    4. 对于特定的BSP，如果没有办法保证和基线的兼容性，需要将这些代码独立出来，通过构建系统来生成相关的BSP
+    5. 可以通过这个SIG组的工作，对现有openEuler的rpm包的组织结构进行一次全面的梳理，争取能够做到更好的分层和解耦。
+ 
+
+结论：同意成立embeded SIG组
+1. 请协同其它相关SIG，确定参与的团队和人员
+2. 考虑embeded的构建系统的架构设计。
+3. 明确交付的路线图，交付内容，版本节奏等
+4. 要明确硬件类型
+5. 和os-builder等SIG合作，保证构建能够共享相关的工作。
+
+* 请 郭寒军 作为 SIG 导师
+
+SIG-MINZUCHESS 申请
+PR 见 https://gitee.com/openeuler/community/pulls/1449
+
+结论：同意成立minzuchess SIG，该SIG对社区的多样性，拓展AI的应用范围，保护民族文化遗产方面都很具有意义。
+单需要注意openEuler社区更多是承接技术方面的工作，所以SIG的交付件需要聚焦到软件实体等内容
+具体的批准按照PR进行审视。
+
+* 请 王建民 作为 SIG 导师
+
+关于社区中使用英文的提议：
+讨论的基本结论：
+1. 当前社区的发展阶段还是以效率为主，考虑到国内开发者的英语能力参差不齐，所以语言上目前还不强制使用英语。
+2. 不反对，或者鼓励大家使用英文进行提交和沟通
+3. 考虑使用自动化软件对中文进行翻译，特别是SIG和社区的各种文档（该遗留问题由马全一进行跟踪闭环）
+
+
+关于安全漏洞的工作汇报和审视：
+漏洞处理介绍：
+    1. 代码静态扫描工具，建议对准确率80%-90%以上的问题直接发布，对于准确率较低的问题人工分析后再发布。
+    2. 下游厂商如果有加入openwall的资源，可以积极参与到加入openwall的工作中，提升社区的安全影响力。
+TC委员会对安全漏洞的工作做了审视，有如下的意见：
+1. 软件所的工作推进相对较慢，由王建民负责在软件所内部进行协调，协同刘金刚等梳理相关的工作。
+2. 相关安全的流程提交到安全委员会的相关文档中，作为正式的流程规范定下来。更新完相关文档以后发邮件到tc和dev邮件列表通报社区。（责任人：刘金刚）
+
+========================================================================
