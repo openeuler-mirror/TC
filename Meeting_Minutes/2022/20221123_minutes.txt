@@ -1,0 +1,43 @@
+Meeting Link 会议链接：https://us06web.zoom.us/j/81299750904?pwd=dE44d0RXUU1CT0MzcCthTUpkUk1aUT09
+Host 轮值主持人：王建民 jianmin@iscas.ac.cn [@jianminw]
+Next Host 下次轮值主持人：王志钢 wangzhigang17@huawei.com
+Participants 与会人：王建民、陈棋德、石勇、胡欣蔚、熊伟、王志钢、胡峰、刘恺、卞乃猛、吴峰光、魏刚、程鑫鑫、赵川峰、王伶卓、郑振宇、曹志、叶青龙、杨芳、谢秀奇
+
+Meeting Notes 会议纪要：
+
+1. Debriefing statements of TC members 技术委员会委员述职
+
+  - 17 位委员分别做了述职报告，围绕每位委员的改进方向大家相互提出了建议
+  - 会后各委员将述职报告和明年继续承担 TC 委员的意愿发邮件给委员会主席 @胡欣蔚
+  - 刘寿永因事请假下一次做述职报告
+
+2. 讨论（RFC）：Clang+LLVM构建openEuler  -  赵川峰
+
+  - 多位与会者赞同 Clang + LLVM 先拿嵌入式先入手，希望有更快的动作和尝试，逐步进行，与感兴趣的 SIG 多沟通。
+  - Clang + LLVM  与各家编译芯片的使能工作都进行沟通一下，当前龙芯的有在沟通并推进。
+  - 对于当前正在使用 GCC 编译环境的用户，需要说明如何兼容 GCC 的使用习惯。
+
+3.  提议openEuler社区增加开发者仓库 - 李超然
+
+  - 需求和目的比较明确，但具体的方案的描述上存在模糊和过大规模的风险，还需要推敲落地方案
+  - 与统一构建（wufengguang）、oepkgs（jianmin） 沟通后续的对接
+
+4. openEuler Summit 2022 议题征集 - 程鑫鑫
+
+  - 欢迎大家积极提交议题，分享会议信息
+  - 议题征集链接：https://mp.weixin.qq.com/s/4AOJcKeRu0nTrG73QFXNgg
+  - 议题征集截至日期：11月27日
+
+5. AI-sig & Minzuchess-sig 将发布面对AI教育的 树莓派发行版 based oe22.09 - 袁德俊，郑弦
+
+  - 直接作为提案提交 Summit，负责提案讨论的老师回邮反馈意见即可
+
+Remaining issues 遗留问题：
+
+1. 技术委员会委员述职 - 刘寿永
+2. 22.03 LTS 同源异构分支申威和loongarch，需要制定完整的分支回合方案和维护方案，并制定相应计划 - 车明道
+3. Infrastructure SIG 孵化OmniVirt跨平台开发资源(虚拟机、容器)管理工具 - 郑振宇
+   - 提供在Windows、MacOS、Linux桌面系统上的统一openEuler虚拟机、容器使用体验
+   - 支持各OS虚拟化硬件加速，提供性能保证
+   - 使用社区发布的虚拟机、容器镜像，无需单独发布镜像
+   - 计划支持VS Code插件，提供便利的开发体验
