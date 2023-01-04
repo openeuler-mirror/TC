@@ -1,0 +1,40 @@
+Date 日期：2022-11-30
+Time 时间：10:00-11:30 (UTC/GMT+8:00)
+会议链接:  https://us06web.zoom.us/j/83599093520?pwd=and0b25Kc1NJakQyLzNSWGE5M0Fadz09
+Etherpad链接:  https://etherpad.openeuler.org/p/TC-meetings
+Host 轮值主持人：王志钢 wangzhigang17@huawei.com
+下次会议主持人：任慰 renwei41@huawei.com
+Participants 与会人：王志钢、吴峰光、熊伟、魏刚、刘恺、侯健、胡欣蔚、陈棋德、卞乃猛、王建民、熊伟、刘寿永、任慰、曹志、杨昭、叶青龙、胡峰、江新宇、李永强、潘晨博、石勇、车明道、郑振宇、赵川峰
+
+Meeting Agenda 会议议题：
+1、技术委员会委员述职 - 刘寿永
+胡欣蔚建议：多拉动周边sig，多互动，形成合力
+熊伟建议：SIG内的工作在gitee中进行同步，中间件需要移植到openEuler中，芯片支持需要和kernel SIG交流，合入到内核
+
+2、遗留问题跟踪
+-   22.03 LTS 同源异构分支申威和loongarch，需要制定完整的分支回合方案和维护方案，并制定相应计划 - 车明道
+结论：1、baseos发布阶段适配代码隔离，消除对其他架构影响；everything阶段部署门禁，复用arm/x86 门禁检查规则；维护责任划分，公共代码原SIG maintainer维护，架构适配代码厂商维护。
+2、闭源组件二进制及签名建议由厂商提供，消解合规风险。
+遗留问题：正式发布前，再check一下策略 -   胡欣蔚、胡峰、车明道
+
+
+3、 Infrastructure SIG 孵化OmniVirt跨平台开发资源(虚拟机、容器)管理工具 - 郑振宇
+- 提供在Windows、MacOS、Linux桌面系统上的统一openEuler虚拟机、容器使用体验
+- 支持各OS虚拟化硬件加速，提供性能保证
+- 使用社区发布的虚拟机、容器镜像，无需单独发布镜像
+- 计划支持VS Code插件，提供便利的开发体验
+
+结论：很有价值的项目，很匹配高校开发者和桌面开发者的核心诉求，期待早日完成开发。
+            - 前端可以考虑用页面实现，方便在不同平台迁移
+            - 可以考虑用haxm来提升虚拟化性能
+
+
+4、openEuler Issue/PR SLA改进机制- 郑振宇
+- Infra团队已开始每周向各SIG组Maintainer推送其所负责SIG组PR详情邮件
+- 社区SIG组看板已具备Maintainer Review详情展示
+本次同步上述机制的主要功能，同时期望TC能够推动使用上述机制提升openEuler Issue/PR SLA
+
+遗留问题：基础设施sig安排一次直播/讲座对社区进行宣传 -  曹志/郑振宇
+
+5、openEuler TC 委员增选计划沟通 -- 胡欣蔚
+- 计划 12/4 上午举行 2023 年 openEuler TC 委员增选
