@@ -1,0 +1,39 @@
+Data 日期：2023-1-4
+Time 时间：10:00-12:00 (UTC/GMT+8:00)
+会议链接：https://us06web.zoom.us/j/83527235637?pwd=a2E4V3NPbzhOdHJZRkd2WkI1NWJwZz09
+会议纪要：https://etherpad.openeuler.org/p/TC-meetings
+Host 轮值主持人：吴峰光 wufengguang@huawei.com
+下次会议主持人：王建民
+Participants 与会人：陈棋德、吴峰光、魏刚、王志钢、侯健、任慰、胡峰、刘恺、谢秀奇、中科微澜-闫志全、张子杨，胡欣蔚、田俊、王建民、赵川峰、杨昭、江新宇、范佳臣、 胡亚弟、郑振宇，熊伟、李永强、卞乃猛、杜奕威、曹志
+
+Meeting Agenda 会议议题：
+
+1. SBOM工具链在openEuler社区的应用及后续在社区的运作、推广 - 王泽俊、刘波
+- SBOM在线服务：https://sbom-service.osinfra.cn/
+- SBOM代码仓：https://github.com/opensourceways/sbom-service
+- SBOM博客：https://www.openeuler.org/zh/blog/robell/openEuler_SBOM_Practice.html
+- 三方厂商，下游厂商，怎么用起来，怎么协作？补充这个视角的介绍
+- 上下游打通，感兴趣的厂商，可以继续深入交流，选择或创建一个SIG讨论，比如安全SIG
+- 在欧拉社区提供了SBOM数据之后，还需要大家来思考怎么用起来，提供多方面的差异化服务
+
+2. vtopia agent开源方案（中科微澜科技，闫志全）
+- 发布为rpm包，让用户一键安装使用
+- 漏洞管理方案较多，大家是否坐在一块，安全委员会牵头，看看怎么更好的合作、标准化规范化，在社区摊薄公共成本，更好的聚焦投入在商业部分
+- 魏刚遗留问题：安全委员会：盘点一下组件地图，都有哪些工具（AOPS有类似能力，一起参与讨论），功能点，各工具都是怎么互通的，有无重复工作可分摊，有无标准化途径
+
+3、openEluer可重复构建当前应用进展&后续运作 - 熊风波、赵栩锋 -- 延到下次会议
+
+4、操作系统软件包集中管理平台CPM4OSSP开源方案（凝思软件）
+- 侯健遗留问题：后续在Ops SIG一起讨论，怎么合作，功能互补，形成配合，在下次TC会议上报告进展
+
+5、23年全年会议日历、若干常设议题的建议与讨论 （胡core）
+- 会议日历：遗留和靠后的议题容易被遗忘，在 https://gitee.com/openeuler/TC/ 上记录，轮值主席会后通过PR提交。
+- 优点：更直观，不会忘，容易盘点，提前规划（如SIG汇报，述职等等）
+- 吴峰光：本次会议结束，先执行起来
+
+6、社区论坛服务（https://forum.openeuler.org/）介绍与后续运营讨论。-- 钟君、郑振宇
+- 新板块创建：提交TC讨论，定版主及支撑团队
+- TC、各SIG一起参与，初期需要大家一起来搭建框架
+- offload 目前gitee issue的一些负担，有些问题更适合在forum讨论，形成积累，方便搜索
+- 也是一个展示平台
+- 版主怎么定？不一定是SIG维护者，可考虑SIG相关开发者，且在对外展示交流方面，有兴趣有擅长
