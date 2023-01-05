@@ -5,10 +5,10 @@ The TC repo is to store all the information about openEuler TC, inclouding meeti
 
 ### 2023 年会议日历
 
-| 计划日期 <br/>(Scheduled Date) | 轮值主持人 <br/>(Chair Person) | 议题提案 (Proposals)| 
+| 计划日期 <br/>(Scheduled Date) | 轮值主持人 <br/>(Chair Person) | 议题提案 (Proposals)|
 | :--------: | :----------: | :-------- |
-| 1-4  | 吴峰光 | 1. SBOM工具链在openEuler社区的应用实践.<br/> 2. 2023 年 openEuler 技术委员会议题安排讨论. |
-| 1-18 | 王建民 |  |
+| 1-4  | 吴峰光 | 1. SBOM工具链在openEuler社区的应用及后续在社区的运作、推广 - 王泽俊、刘波<br /> 2. vtopia agent开源方案（中科微澜科技，闫志全）<br />3. 操作系统软件包集中管理平台CPM4OSSP开源方案（凝思软件）<br />4. 23年全年会议日历、若干常设议题的建议与讨论 （胡core）<br />5. 社区论坛服务（https://forum.openeuler.org ）介绍与后续运营讨论。 - 钟君、郑振宇 |
+| 1-18 | 王建民 | 1、openEluer可重复构建当前应用进展&后续运作 - 熊风波、赵栩锋<br />2、 SIG-Ops PilotGo/CPM4OSSP合作进展汇报 -- 侯健、凝思软件<br /> |
 | 2-1  | 王志钢	 |  |
 | 2-15 | 熊 伟	 |  |
 | 3-1  | 叶青龙	 |  |
