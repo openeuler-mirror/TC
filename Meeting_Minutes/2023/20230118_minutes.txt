@@ -1,0 +1,39 @@
+Data 日期： 2023-1-18
+Time 时间：10:00-12:00 (UTC/GMT+8:00)
+Meeting Link 会议链接：https://us06web.zoom.us/j/84061840951?pwd=aW5tZXZHLzVWREtLNXJjK0lFamJjUT09
+Recordings 会议纪要：https://etherpad.openeuler.org/p/TC-meetings
+Host 轮值主持人：  王建民 jianmin@iscas.ac.cn
+Next Host 下次会议主持人： 王志钢
+Participants 与会人：田俊、陈棋德、任慰、王志钢、杨昭、车明道、熊伟、叶青龙、魏刚、谢秀奇、吴峰光、刘恺、胡峰、张子杨
+
+春节快乐、兔年大吉！
+
+Meeting Agenda 会议议题：
+
+1. openEluer可重复构建当前应用进展&后续运作 - 熊风波、赵栩锋
+
+- 以环境变量方式来保证编译构建工具针对时间戳、Hostname 等信息做处理，满足可重复构建的要求
+- 相关工具也会在社区内开源
+- 可重复构建平台地址是 https://reproducible-builds.openeuler.org/
+- 建议
+    - 官网有可重复构建平台的入口
+    - 通过 Meetup 和网上直播来给社区介绍宣传
+
+2. SIG-Ops PilotGo/CPM4OSSP合作进展汇报 -- 杨昭、侯健、钟茂恒（凝思软件）
+
+    - 开放接受社区的需求和建议，比如数据格式保持与 openEuler 相关的信息兼容，比如软件包信息、CVE 格式等
+
+3. 上游长期未发布稳定版本软件包 引入策略讨论 - 车明道
+
+    - 提供包括引入原则的文档，围绕引入 commit 的原则提供更细化的原则供 TC/Maintainer 在审核引入做参考，原则文档建议包含参考案例。
+    - 原则的文档最后由 TC 评审，原则的执行放在各 SIG Maintainer 来决策是否引入。
+    - 建议是否可以提供一些量化标准（比如适用范围、维护质量）放在原则文档里
+
+4. openEuler 23.03 创新版本选择 6.1 内核讨论 - 谢秀奇、王伟
+
+    - 建议补充 6.1 内核针对 RISC-V 以及其他架构、不同芯片等支持范围的目标
+    - 建议下一个内核版本采用 6.x 系列，具体版本后续会参考 Linux 社区 LTS 版本的确定，也还需要参考包括 ISV/OSV 在内针对下一个 LTS 的发布时间的各方意见
+    - 围绕具体补丁以及特性是否合入以及未来演进的意见可以在内核例会上进一步讨论
+    - 预计 2 月 10 日之前 Base OS With Linux 6.1 会就绪
+    - 关于创新版本和 LTS 版本的节奏是否可以调整一下的问题
+      - 目前存在一些问题，后续安排讨论，暂时按目前节奏往前走
