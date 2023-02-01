@@ -1,0 +1,25 @@
+Data 日期： 2023-2-01
+Time 时间：10:00-12:00 (UTC/GMT+8:00)
+Meeting Link 会议链接：https://us06web.zoom.us/j/81557105531?pwd=dE5OTjZVdXhUWWZTaXNCb1d5SDE3UT09
+Recordings 会议纪要：https://etherpad.openeuler.org/p/TC-meetings
+Host 轮值主持人：  王志钢 
+Next Host 下次会议主持人： 熊伟
+Participants 与会人：魏刚、陈棋德、刘恺、侯健、王志钢、曹志、熊伟、、谢秀奇、张子杨、任慰、胡峰、吴峰光、石勇、王建民、胡欣蔚、卞乃猛、赵川峰
+
+Meeting Agenda 会议议题：
+
+议题1、使用GCC x86-64-v2微架构级别编译OpenEuler 23.09创新版本 -  （Annita Zhang，Intel）
+
+结论：可以在23.09创新版本进行尝试，评估效果和影响，为LTS版本提供决策基础。
+
+遗留问题：
+1、对其他x86级兼容芯片（如海光、兆芯），评估修改微架构级别的影响？ 跟进人：胡峰、Annita
+2、由Compiler SIG牵头，调研清楚相关OSV和云厂商的态度                             跟进人：赵川峰、熊伟
+
+
+
+议题2、为天翼云 CTinspector 开设代码仓-    （樊小平，天翼云）
+
+结论：同意在ebpf Sig 开设CTinspector代码仓，并通过公众号宣传一下
+
+遗留问题：在ops Sig再深入讨论下如何分工和协作 跟进人：胡峰、樊小平
