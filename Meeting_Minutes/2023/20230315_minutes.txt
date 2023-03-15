@@ -1,0 +1,42 @@
+Data 日期： 2023-3-15
+Time 时间：10:00-12:00 (UTC/GMT+8:00)
+Meeting Link 会议链接：https://us06web.zoom.us/j/84993089289?pwd=cVIrTWlxSUlkWUlOcXRvMnZzWkMvUT09
+Recordings 会议纪要：https://etherpad.openeuler.org/p/TC-meetings
+Host 会议主持人： 王伶卓
+Next Host 下次会议主持人： 魏刚
+Participants 与会人：王伶卓、王志钢、陈棋德、熊伟、任慰、曹志、刘恺、魏刚、侯健、卞乃猛、丁文龙、吴峰光、吕从庆、胡峰、胡宗棠、卢景晓、王建民
+
+Meeting Agenda 会议议题：
+1.创建sig-QT组遗留问题交流反馈
+稍后反馈
+遗留问题进度汇报如下：
+   * 和统信以及相关的SIG等相关方确定一下   （目前和统信以及riscv同学讨论过，支持成立sig-Qt组，后期会发到邮件列表）
+    * 考虑嵌入式的场景支持       （支持，成立sig组后会跟进具体问题需求）
+    * 建仓的方式明确一下         （采用上游分开建仓的方法，方便维护）   
+    * 和合规SIG也沟通一下        （Qt6新增GFDL-1.3-no-invariants-only 和Qt-GPL-exception-1.0协议，在3.2号合规会议上讨论，3.9号合规组给出反馈，都获得OE认可）
+    * 6.2长维护周期需要商业版本，汇报QT版本（目前初步规划，根据QT上游社区最新的版本引进维护）
+    
+TC投票通过SIG成立。
+
+2.Notification SIG 申请: https://gitee.com/openeuler/community/pulls/4478
+没有响应，建议先关闭。
+
+3. Message SIG 申请，引导人 中国移动云能力中心 胡宗棠
+确定命名为 Message Middleware
+进一步明确软件包范围，RocketMQ .....
+召集了来自不同厂商的Maintainer，.....
+中移动内部也准备好投入。
+TC投票通过SIG成立。
+下一步提交PR。
+
+4 主题：RFO SIG在openEuler+Kunpeng ARM上的进展
+简介：整体预计10min的快闪分享，阐述Rancher在此领域的新进展，以及RFO SIG预计今年推出的亮点。(纯粹交流，互通有无)
+申报人：张智博（SUSE）
+
+熊博：建议，体现双向支持，openEuler的logo能出现在rancher的支持列表里。
+
+5 openEuler 23.03创新版不再发布OpenStack - 王玺源
+考虑平衡LTS版和创新版的投入，从创新版移除openstack服务类的软件包，以及个别构建依赖。
+LTS版本不受影响。
+
+熊博：建议策略，LTS版之前的基线创新版本还是需要支持的。
