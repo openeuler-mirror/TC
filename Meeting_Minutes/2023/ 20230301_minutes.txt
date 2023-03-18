@@ -1,0 +1,39 @@
+Data 日期： 2023-3-1
+Time 时间：10:00-12:00 (UTC/GMT+8:00)
+Meeting Link 会议链接：https://us06web.zoom.us/j/84848029185?pwd=bTJ0azh0NkJLWkJkNjB4c3NlelFWdz09
+Recordings 会议纪要：https://etherpad.openeuler.org/p/TC-meetings
+Host 会议主持人： 叶青龙
+下次例会主持人：王伶卓
+Next Host 下次会议主持人： 
+Participants 与会人：刘恺、陈棋德、卞乃猛、叶青龙、王建民、石勇、魏刚、赵川峰、胡欣蔚、任慰、吴峰光、王志钢、李永强、熊伟、侯健、胡峰、胡宗棠、卢景晓
+
+Meeting Agenda 会议议题：
+遗留问题：
+1. CTinspector在ops SIG的交流反馈 (侯健之前请假了，这次补)
+--应用场景尚未清晰，希望澄清加强
+ebpf加强沟通
+CTinspector同意建仓，OPS SIG组看护
+熊伟：OPS SIG比较庞大，下次例会对SIG规划做汇报 --杨昭
+2.创建sig-QT组遗留问题交流反馈
+* 6.2长维护周期需要商业版本
+各方交流结论通过邮件列表发送
+下次例会汇报QT版本
+
+
+
+新议题：
+1.Notification SIG 申请: https://gitee.com/openeuler/community/pulls/4478  
+--遗留
+2. Message SIG 申请，引导人 中国移动云能力中心 胡宗棠
+-消息中间件由该sig组看护，看护策略需考虑明确；
+- SIG名称建议更加符合中间件的概念
+- 应该引入软件，开源增强，自研软件三类都需要纳入到SIG内
+- 考虑和嵌入式SIG的协同工作。
+- 和公司进行一次探讨，
+
+3. OpenHPC社区支持openEuler进展同步  姜逸坤
+进展同步，持续开展合作
+配套openEuler版本与release SIG确认，后续openHPC的版本适配需要和release的节奏进行对接和匹配，保证和硬件等的适配性。
+和Intel的HPC团队考虑进行协同
+4.原TC委员叶青龙推荐吕从庆接任TC委员代表统信软件
+5. buildsystem和N5P，openboad等SIG的退出建议，召开TC线下会议的建议：熊伟
