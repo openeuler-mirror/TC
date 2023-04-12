@@ -1,0 +1,34 @@
+Data 日期： 2023-4-12
+Time 时间：10:00-12:00 (UTC/GMT+8:00)
+Meeting Link 会议链接：https://us06web.zoom.us/j/83438437323?pwd=QXZMYXFuWEJVQStseHZMUGxIaXlSdz09
+Recordings 会议纪要：https://etherpad.openeuler.org/p/TC-meetings
+Host 会议主持人： 谢秀奇
+Next Host 下次会议主持人：赵川峰
+Participants 与会人：谢秀奇、陈棋德、吕从庆、刘兴伟、刘恺、王志钢、石勇、丁文龙、魏刚、吴峰光、曹志、胡峰，苏锦铃，张智博、侯健、卞乃猛、明沛、胡欣蔚、熊伟、田俊、毛晨曦、张智博、卞乃猛、赵川峰
+
+遗留问题：
+1. https://gitee.com/openeuler/community/pulls/4570
+
+该 PR 流程处理有误，TC 上还没有讨论形成结论。下次TC会讨论之后再决策，如果通过，则保持合入状态，如果不通过，则 Revert。 - 卞乃猛
+
+Meeting Agenda 会议议题：
+1.迁移工具开源项目创建申请  汇报人：统信软件刘兴伟
+
+会议结论：
+通过。欢迎迁移工具开源到openEuler社区，希望在openEuler社区形成合力，做的更好。
+
+2.openEuler 主要演进决策的文档化提议 讨论发起人：吴峰光、胡欣蔚
+
+提议参照一些典型开源社区的经验，的演进决策，基于规范化文档来发对未来openEuler大起提议、讨论、执行、归档。
+
+openstack: https://wiki.openstack.org/wiki/Blueprints
+python:https://peps.python.org/pep-0000/
+
+fedora changes: https://docs.fedoraproject.org/en-US/program_management/changes_policy/
+fedora example: https://fedoraproject.org/wiki/LTOByDefault
+
+opensuse proposals: https://en.opensuse.org/openSUSE:Strategy_proposal_overview
+debian proposals: https://dep-team.pages.debian.net/
+
+会议结论：
+会上大家一致认为这是一个很好的形式，可以先以 EEP 这个事情本身打样，下次 TC 会议审视，然后推广。
