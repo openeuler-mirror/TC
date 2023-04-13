@@ -14,7 +14,7 @@ The TC repo is to store all the information about openEuler TC, inclouding meeti
 | 3-1   | 叶青龙 |  |
 | 3-15  | 王伶卓 |  |
 | 3-29  | 魏 刚  |  |
-| 4-12  | 谢秀奇 |  |
+| 4-12  | 谢秀奇 |1.迁移工具开源项目创建申请  汇报人：统信软件刘兴伟<br />2.openEuler 主要演进决策的文档化提议 讨论发起人：吴峰光、胡欣蔚<br />|
 | 4-26  | 赵川峰 |  |
 | 5-10  | 卞乃猛 |  |
 | 5-24  | 陈祺德 |  |
