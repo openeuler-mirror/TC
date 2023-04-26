@@ -14,8 +14,8 @@ oEEP (openEuler 演进提案 Evolution Proposal) 索引
 
 | 编号 | 类型，状态 | 标题 | 作者 | 提案日期 |
 | :----: | :-----------: | :----: | :----: | :---------: |
-| 0001 | P,I | 通过 oEEP 规范化社区演进的技术决策流程 | 胡欣蔚 shinwell_hu at opensuler.sh | 2023-04-13 |
-| 0002 | D,I | oEEP 格式与内容规范 | 胡欣蔚 shinwell_hu at openeuler.sh | 2023-04-13 |
+| 0001 | P,I | [通过 oEEP 规范化社区演进的技术决策流程](oEEP-0001%20通过%20oEEP%20规范化社区演进的技术决策流程.md) | 胡欣蔚 shinwell_hu at opensuler.sh | 2023-04-13 |
+| 0002 | D,I | [oEEP 格式与内容规范](oEEP-0002%20oEEP%20格式与内容规范.md) | 胡欣蔚 shinwell_hu at openeuler.sh | 2023-04-13 |
 
 ## oEEP 类型分类：
 - D (Document, 信息整理): 信息梳理形成的文档。此类 oEPP 包含社区索引，指南，规范或其他和 openEuler 相关的信息。
