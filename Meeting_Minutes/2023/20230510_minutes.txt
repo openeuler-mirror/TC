@@ -1,0 +1,59 @@
+Data 日期： 2023-5-10
+Time 时间：10:00-12:00 (UTC/GMT+8:00)
+Meeting Link 会议链接：https://us06web.zoom.us/j/89819615326?pwd=eVZZV0JkWXJ5emZxMUEvcEo4TXRHZz09
+Recordings 会议纪要：https://etherpad.openeuler.org/p/TC-meetings
+Host 会议主持人： 卞乃猛
+Next Host 下次会议主持人：陈祺德
+Participants 与会人：卞乃猛、吕从庆、张国一、吴峰光、胡欣蔚、魏刚、陈棋德、王志钢、曹志、王伶卓、毛晨曦、李永强、胡峰、丁文龙、谢秀奇
+一、Meeting Agenda 会议议题：
+1、议题：成立FangTian SIG
+介绍：申请成立FangTian视窗引擎SIG组
+发起人：@zhengsenwen @shen_hua_li @ShaoboFeng @yanansong
+ 
+1) 胡core：该SIG涉及的面比较多，与其它SIG都有协同的需求，建议 SIG成立后，需要通过oEEP方式 文档化
+2) SIG成立的结论： 同意
+ 
+2、议题：申请成立rust-tools SIG
+介绍：通过该SIG孵化相关用rust写的一些工具类项目，同时申请开源统信公司的utsodu和utshell两个工具
+发起人：吕从庆
+ 
+1）胡Core：建议不仅限于当前提到的Tools，希望能够审视一下 openEuler社区关键组件，形成需要进行Rust重构的工作地图。
+2）胡Core&熊伟&田俊：建议SIG的愿景再宏伟一些，相应的把SIG名称也调整一下。
+3）侯健：由于也存在其它社区在做RUST重构的工作，建议保持自己的独特性优势。
+4）SIG成立的结论： 同意
+ 
+3 、议题： Bio SIG 的后续维护
+介绍：SIG Bio 后续可持续的发展、ARM 等框架的 Patch
+发起人：张国一
+ 
+胡Core： 欢迎大家积极参与到Bio SIG的工作
+遗留事项： 胡Core将 国一 增加到Bio SIG的Maintainer中。
+ 
+4. n5p SIG 撤销讨论
+介绍：n5p SIG 由于无法保持投入，申请撤销
+发起人：胡欣蔚
+ 
+胡Core：SIG当前基本没有提交和任何进展，建议撤销。
+结论：胡Core提交PR撤销这个SIG。
+ 
+5、议题：openEuler 安全公告变更申请
+背景：新增热补丁服务，需要在cvrf和主页增加热补丁交付件信息，涉及cvrf.xml格式变更
+发起人：@solarhu
+ 
+1) 胡Core：建议写一个oEEP
+2) 侯健：希望能与OSV共享相关的能力
+ 
+6、议题：openEuler SIG主页在线编辑实时同步SIG信息
+介绍：为降低openEuler官网开发门槛，及时更新SIG关键信息，增加在线编辑SIG主页功能，满足SIG及时更新简介、会议等信息，新增自定义图文展示会楼层等
+           https://easyeditor.openeuler.org/zh/login?redirect=/zh/
+发起人：@zhongjun2
+ 
+1）熊伟： 发送邮件到Maintainer通知到大家。
+ 
+7、议题：关于committer和maintainer的审批事宜，关于自研项目收集展现&OSS EU参会事宜讨论
+发起人：熊伟
+ 
+1）熊伟：Committer和Maintainer的变更 需要SIG内部 充分讨论，形成决议后，由TC审批。在PR中要包含 内部讨论和结论的相关信息
+2）欢迎大家提交内容到 OSS EU
+ 
+二、遗留问题：无
