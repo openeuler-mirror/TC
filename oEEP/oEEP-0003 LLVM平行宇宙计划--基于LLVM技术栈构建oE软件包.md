@@ -1,14 +1,12 @@
-作者:
-赵川峰（cf-zhao）
+- Title:    LLVM平行宇宙计划--基于LLVM技术栈构建oE软件包
+- oEEP:     0003
+- State:    初始化
+- Date:     2023/05/22
+- Driver:   赵川峰（cf-zhao）
+- Type:     特性变更
+- Abstract: 通过LLVM技术栈重新构建openEuler的方案设计
 
-标题:
-LLVM平行宇宙计划--基于LLVM技术栈构建oE软件包
 
-状态:
-初始化
-
-类别：
-特性变更
 
 ## 动机/问题描述:
 众所周知，GCC与LLVM是两个影响力最大的开源编译器工具链。目前，openEuler社区默认使用GCC作为构建软件包的编译器。
