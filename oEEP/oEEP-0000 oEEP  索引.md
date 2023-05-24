@@ -1,14 +1,10 @@
-作者:
-openEuler 技术委员会 (tc at openeuler.org)
-
-标题:
-oEEP (openEuler 演进提案 Evolution Proposal) 索引
-
-状态:
-初始化
-
-类型:
-信息整理
+- Title:    oEEP (openEuler 演进提案 Evolution Proposal) 索引
+- oEEP:     0000
+- State:    活跃
+- Date:     2023/05/22
+- Driver:   openEuler 技术委员会 (tc at openeuler.org)
+- Type:     信息整理
+- Abstract: 当前 oEEP 全集索引
 
 ## 索引:
 
