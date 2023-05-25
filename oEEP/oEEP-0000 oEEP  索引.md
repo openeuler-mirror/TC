@@ -1,10 +1,13 @@
-- Title:    oEEP (openEuler 演进提案 Evolution Proposal) 索引
-- oEEP:     0000
-- State:    活跃
-- Date:     2023/05/22
-- Driver:   openEuler 技术委员会 (tc at openeuler.org)
-- Type:     信息整理
-- Abstract: 当前 oEEP 全集索引
+---
+标题:     oEEP (openEuler 演进提案 Evolution Proposal) 索引
+类别:     信息整理
+摘要:     当前 oEEP 全集索引
+作者:     胡欣蔚 (shinwell_hu at openeuler.sh)
+状态:     活跃
+编号:     oEEP-0000
+创建日期: 2023-04-16
+修订日期: 2023-05-25
+---
 
 ## 索引:
 
