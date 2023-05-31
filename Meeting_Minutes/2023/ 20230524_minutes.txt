@@ -1,0 +1,36 @@
+Data 日期： 2023-5-24
+Time 时间：10:00-12:00 (UTC/GMT+8:00)
+Meeting Link 会议链接：https://us06web.zoom.us/j/82109071681?pwd=SGIJSIRLNEhiUUtRaU1DMU0xanI2Zz09
+Recordings 会议纪要：https://etherpad.openeuler.org/p/TC-meetings
+Host 会议主持人： 陈棋德
+Next Host 下次会议主持人：曹志
+Participants 与会人：陈棋德、石勇、李永强、胡峰、毛晨曦、、侯健、吕从庆、赵川峰、任慰、王志钢、刘恺、曹志，苏锦铃，魏刚、卞乃猛、吴峰光、王建民
+一、Meeting Agenda 会议议题：
+1、议题：成立Port-from-Windows SIG
+介绍：申请成立Port-from-Windows应用迁移SIG组
+发起人：温研
+
+已有案例通过wine跑起来，openGL三维效果好但存在字体,VB,浏览器等等需要解决，每个应用的问题都不一样但总体上看通过具体问题具体调整能解决；但如果采用最新技术则wine不支持
+交付件为源码
+
+.net是否能也承担起来？
+
+结论：申请人与 compat-winapp SIG 交流确定是否合并、未来的计划和分工。 @王建民 @刘东 @杜开田
+
+2. oEEP 流程和文档批准决策
+同意oEEP 0001和0002
+发起人: 胡欣蔚
+
+结论：0002还在改，其他的可以改为活跃状态
+
+3. 议题：openEuler智能补丁管理oEEP汇报 
+介绍：介绍智能补丁方案，变更点和主要计划
+发起人：胡峰(solarhu)
+
+五个步骤制作补丁
+问：开发人员怎么做补丁，管理人员怎么看到补丁？角色和流程
+结论：继续
+
+4. 议题：gcc7.3作为多版本引入openEuler
+介绍：gcc7.3引入openEuler的背景和技术方案
+发起人：张无际
