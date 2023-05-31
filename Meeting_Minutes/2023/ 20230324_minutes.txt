@@ -1,0 +1,16 @@
+Data 日期： 2023-3-24（闭门会议）
+Time 时间：全天 (UTC/GMT+8:00)
+地点：天津麒麟软件大厦
+Meeting Link 会议链接：
+Recordings 会议纪要：
+会议主持人： 魏刚
+Next Host 下次会议主持人：谢秀奇
+会议结论：
+* openboard和buildsystem两个SIG撤销存档
+* 谢秀奇汇报了下一个LTS版本内核选型的策略，经讨论下一个LTS的内核选型为2023年底的kernel上游社区的LTS版本，预计在6.6-6.8之间。release SIG应基于这个版本选型规划下一个LTS的发布时间。
+* 启动llvm构建openEuler的工作，由compiler SIG牵头实施
+* 统一构建和基础设施应尽快完成yaml为标准的元数据对接，完成社区业务闭环，可以考虑llvm的全量构建为试点
+* 推动嵌入式SIG和acrn等社区的合作
+* 尽快解决gitee的git clone在海外无法使用的问题 -- 曹志
+* CVE的影响应该有相关影响范围标注，比如是否影响边缘计算版本，嵌入式版本等
+会议还讨论了其它社区的相关事宜
