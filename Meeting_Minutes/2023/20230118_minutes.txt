@@ -37,3 +37,11 @@ Meeting Agenda 会议议题：
     - 预计 2 月 10 日之前 Base OS With Linux 6.1 会就绪
     - 关于创新版本和 LTS 版本的节奏是否可以调整一下的问题
       - 目前存在一些问题，后续安排讨论，暂时按目前节奏往前走
+
+5. Call For Speakers: FOSS Asia Summit 2023 in Singapore 
+
+    - 会议时间：2023 年 4 月 13 日至 15 日
+    - 演讲申请截止时间：2 月 8 日
+    - 会议链接：
+      - https://eventyay.com/e/7cfe0771
+      - https://blog.fossasia.org/fossasia-summit-2023-in-singapore-and-online/
