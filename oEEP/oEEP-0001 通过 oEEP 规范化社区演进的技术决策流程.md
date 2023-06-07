@@ -1,11 +1,13 @@
-- Title:    通过 oEEP ( openEuler 演进提案 Evolution Proposal) 规范化社区演进的技术决策流程
-- oEEP:     0001
-- State:    活跃
-- Date:     2023/05/22
-- Driver:   胡欣蔚 (shinwell_hu at openeuler.sh)
-- Type:     流程设计
-- Abstract: 为openEuler增加 oEEP 流程
-
+---
+标题:     通过 oEEP ( openEuler 演进提案 Evolution Proposal) 规范化社区演进的技术决策流程
+类别:     流程设计
+摘要:     为 openEuler 增加 oEEP 流程
+作者:     胡欣蔚 (shinwell_hu at openeuler.sh)
+状态:     活跃
+编号:     oEEP-0001
+创建日期: 2023-04-16
+修订日期: 2023-05-25
+---
 
 ## 动机/问题描述:
   openEuler 社区经过了3年的演进和发展，过程中已经发生了很多关键的技术决策。这些技术决策的过程分散在各次技术委员会、SIG的会议当中；这些技术决策的传递和落实，通过开发者之间的直接沟通；这些技术决策有时候会通过openEuler公众号公开，有时候会通过视频讲解，但更多时候会忽略了对社区的推广。
