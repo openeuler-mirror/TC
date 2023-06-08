@@ -1,0 +1,87 @@
+ Data 日期： 2023-6-7
+Time 时间：10:00-12:00 (UTC/GMT+8:00)
+Meeting Link 会议链接：https://us06web.zoom.us/j/84664926186?pwd=c2paS2VoNTNqZ3NBeis5ampsdzJ6Zz09
+Recordings 会议纪要：https://etherpad.openeuler.org/p/TC-meetings
+Host 会议主持人： 曹志
+Next Host 下次会议主持人：侯 健
+Participants 与会人：曹志、石勇、魏刚、胡欣蔚、李永强、任慰、熊伟、胡峰、田俊、吕从庆、谢秀奇、赵川峰、侯健、陈棋德、王伶卓
+
+遗留事项跟踪 :  成立Port-from-Windows应用迁移SIG组的待确定事宜 @杜开田
+20230606：与软件所王建民老师、麟卓刘东老师、麟卓徐芬老师、opneEuler 李君弋老师交流，达成如下意见：
+一、对已有应用的兼容 sig-compat-winapp
+负责 wine ，依赖32位补齐，其他在 API 虚拟化层面的兼容
+麟卓之后会推荐团队内对 Wine 有经验的工程师参与 Wine SIG 。
+二、源码迁移的方向 sig-porting-platform-winapp
+负责的仓库和交付件如下：
+  1、移植工具链  
+     1)、工程转换工具，vs -> qt ，
+    2)、提供winapp 库依赖分析工具，支持windows app 需要的依赖在openEuler 依赖。
+     3)、软件包制作，在windows 原有app 在 openEuler 打包发布，支持命令行、图形化安装。
+  2针对开发框架（如winform/ WPF /nodejs ) 开发的windows app ：
+     1）提供一个评估工具，识别当前linux 不具备的一些特性及能力，(识别开发框架在linux下的使用限制）。
+     2）针对当前linux 下支持上述框架缺失的能力，补齐在linux 下控件集合。
+  3、mono/net framework
+     会后已经与 base-service sig 沟通，他们同意将 mono 迁出到 sig-porting-platform-winapp  这个组织
+  4、Maintainer 预计除了麟卓团队成员外，增加 王建民（软件所），李君弋（华为团队）
+熊博：建议先把.net工作接管起来。
+结论：同意SIG组成立
+
+议题一：使用metalink 替换openEuler dnf的repo配置，提高用户的下载效率
+介绍： 当前repo的配置使用的是baseurl，并指向香港的站点，国内和海外的用户下载速度比较慢。
+当前openEuler有30个站点，主要分布在国内和欧洲，北美也有2个。将repo的配置替换为metalink会带来如下几点好处：
+    一、提高用户的下载速度10倍以上；
+    二、更稳定，会同时配置metalink和baseurl，避免单点故障；
+    三、可以实现统一配置，不用随着版本每次修改配置；
+    四、能支持非维护中的版本
+    五、能更准确地统计到全球安装了openEuler系统的计算机数量
+    六、便捷的站点管理平台，方便新站点接入
+发起人： 陈曾 华为
+熊博：是否需要再发布版本带出去，对用户有什么影响; 
+1.对新版本如何修改：SP2开始在repod文件中加入metalink配置；
+2.对已发版本是否采用补丁包等方式和release-sig对齐；
+3.需要考虑后端修改对用户侧的扰动；（路径设计约束需要和release对齐）
+4.countme的配置是否是DNF已有的功能，确保隐私合规；Fedora是否为默认打开，参考评估。
+胡峰、胡core：metalink可以抓紧在SP2中落地，countme可以往后；
+
+议题二：utsudo宣讲
+介绍：简单介绍utsudo和sudo-rs的代码组织架构，并比较两者差异。
+发起人：王路军 统信
+熊博：
+1.建议可以加快速度
+2.建议可以规划一下落地路标
+田俊：
+1.是否考虑用 doas替换sudo
+
+议题三：openEuler LLVM 选型
+介绍：openEuler 23.09版本LLVM的选型分析
+发起人：赵川峰 华为
+议题四：openEuler GCC 选型
+介绍：openEuler 23.09版本GCC的选型分析
+发起人：黄晓权 华为
+三、四议题合一起讨论：
+熊博：
+1.选型对长周期版本的支持需要尽快确定；
+2.需要和芯片厂商达成共识（在对齐中）；熊博约芯片厂商一起商量下；
+3.glibc需要和内核团队达成一致
+4.在嵌入式场景需要把LLVM推出
+胡峰：
+GCC新版本选型随版本发布时间是否需要再考虑
+
+议题五：申请  开源软件供应链安全事务纳入openEuler安全委员会，并新建一个代码仓secChain
+介绍：
+1、申请在https://gitee.com/openeuler中建立项目，名称：secChain
+2、该项目用于孵化软件供应链安全相关的工具链代码、能力框架设计文本等
+发起人：杜泉松 华为
+熊博：
+1.仓库组织形式使用单个仓库管理可能需要再考虑下，多考虑下组织形式（包括仓库、门禁、发布等）
+魏刚：
+1.人、组织、仓库的结构需要梳理清楚
+2.建议仓库是否放在Infrastructure-sig
+
+议题六：《oEEP-0004 openEuler官方容器镜像发布流程》评审
+介绍：新增oEEP定义openEuler官方容器镜像发布流程
+- https://gitee.com/openeuler/TC/pulls/38 Add oEEP-0004: openEuler Official Container Image Publish Workflow
+发起人：姜逸坤 华为
+熊博：
+1. 流程中的角色需要在sig组中确定，并在oEEP文档中体现；
+
