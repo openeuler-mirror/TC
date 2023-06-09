@@ -1,5 +1,5 @@
 ---
-标题:     在dnf的Repo配置中增加metalink配置项
+标题:     dnf根据用户情况自动优化下载软件包
 类别:     特性变更
 摘要:     通过配置metalink为用户选择更优的镜像站点，从而提高下载速度
 作者:     陈曾 (zengchen1024 at chenzeng2@huawei.com)
