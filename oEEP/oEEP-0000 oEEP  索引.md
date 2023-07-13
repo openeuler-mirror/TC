@@ -16,6 +16,7 @@
 | 0001 | P,I | [通过 oEEP 规范化社区演进的技术决策流程](oEEP-0001%20通过%20oEEP%20规范化社区演进的技术决策流程.md) | 胡欣蔚 shinwell_hu at opensuler.sh | 2023-04-13 |
 | 0002 | D,I | [oEEP 格式与内容规范](oEEP-0002%20oEEP%20格式与内容规范.md) | 胡欣蔚 shinwell_hu at openeuler.sh | 2023-04-13 |
 | 0003 | S,I | [LLVM平行宇宙计划--基于LLVM技术栈构建oE软件包](oEEP-0003%20LLVM平行宇宙计划--基于LLVM技术栈构建oE软件包.md) |赵川峰 cf-zhao | 2023-05-04 |
+| 0004 | S,A | [dnf根据用户情况自动优化下载软件包](oEEP-0004%20dnf根据用户情况自动优化下载软件包.md) |陈曾 zengchen1024 at chenzeng2@huawei.com | 2023-06-07 |
 
 ## oEEP 类型分类：
 - D (Document, 信息整理): 信息梳理形成的文档。此类 oEPP 包含社区索引，指南，规范或其他和 openEuler 相关的信息。
