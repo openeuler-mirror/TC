@@ -19,6 +19,7 @@
 | 0004 | S,A | [dnf根据用户情况自动优化下载软件包](oEEP-0004%20dnf根据用户情况自动优化下载软件包.md) |陈曾 zengchen1024 at chenzeng2@huawei.com | 2023-06-07 |
 | 0005 | P,I | [openEuler官方容器镜像发布流程](oEEP-0005%20openEuler官方容器镜像发布流程.md) | 姜逸坤 yikunkero at gmail.com, 鲁卫军 wjunlu217 at gmail.com | 2023-05-10 |
 | 0006 | S,I | [openEuler内核kconfig翻新及内核包拆分](oEEP-0006%20openEuler内核kconfig翻新及内核包拆分.md) | 刘恺 kai.liu at xfusion.com | 2023-07-20 |
+| 0007 | D,I | [openEuler优秀项目评选规则](oEEP-0007%20openEuler优秀项目评选规则.md) | 胡欣蔚 shinwell_hu at openeuler.sh | 2023-07-10 |
 
 ## oEEP 类型分类：
 - D (Document, 信息整理): 信息梳理形成的文档。此类 oEPP 包含社区索引，指南，规范或其他和 openEuler 相关的信息。
