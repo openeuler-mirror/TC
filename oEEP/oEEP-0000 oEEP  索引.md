@@ -6,7 +6,7 @@
 状态:     活跃
 编号:     oEEP-0000
 创建日期: 2023-04-16
-修订日期: 2023-07-20
+修订日期: 2023-07-26
 ---
 
 ## 索引:
@@ -18,7 +18,7 @@
 | 0003 | S,I | [LLVM平行宇宙计划--基于LLVM技术栈构建oE软件包](oEEP-0003%20LLVM平行宇宙计划--基于LLVM技术栈构建oE软件包.md) |赵川峰 cf-zhao | 2023-05-04 |
 | 0004 | S,A | [dnf根据用户情况自动优化下载软件包](oEEP-0004%20dnf根据用户情况自动优化下载软件包.md) |陈曾 zengchen1024 at chenzeng2@huawei.com | 2023-06-07 |
 | 0005 | P,I | [openEuler官方容器镜像发布流程](oEEP-0005%20openEuler官方容器镜像发布流程.md) | 姜逸坤 yikunkero at gmail.com, 鲁卫军 wjunlu217 at gmail.com | 2023-05-10 |
-| 0006 | S,I | [openEuler内核kconfig翻新及内核包拆分](oEEP-0006%20openEuler内核kconfig翻新及内核包拆分.md) | 刘恺 kai.liu at xfusion.com | 2023-07-20 |
+| 0006 | S,A | [openEuler内核kconfig翻新及内核包拆分](oEEP-0006%20openEuler内核kconfig翻新及内核包拆分.md) | 刘恺 kai.liu at xfusion.com | 2023-07-20 |
 | 0007 | D,I | [openEuler优秀项目评选规则](oEEP-0007%20openEuler优秀项目评选规则.md) | 胡欣蔚 shinwell_hu at openeuler.sh | 2023-07-10 |
 | 0008 | P,I | [openEuler智能补丁管理框架](oEEP-0008%20openEuler智能补丁管理框架.md) | 胡峰 solarhu| 2023-07-25 |
 
