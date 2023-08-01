@@ -6,7 +6,7 @@
 状态:     活跃
 编号:     oEEP-0000
 创建日期: 2023-04-16
-修订日期: 2023-07-26
+修订日期: 2023-07-31
 ---
 
 ## 索引:
@@ -21,6 +21,7 @@
 | 0006 | S,A | [openEuler内核kconfig翻新及内核包拆分](oEEP-0006%20openEuler内核kconfig翻新及内核包拆分.md) | 刘恺 kai.liu at xfusion.com | 2023-07-20 |
 | 0007 | D,I | [openEuler优秀项目评选规则](oEEP-0007%20openEuler优秀项目评选规则.md) | 胡欣蔚 shinwell_hu at openeuler.sh | 2023-07-10 |
 | 0008 | P,I | [openEuler智能补丁管理框架](oEEP-0008%20openEuler智能补丁管理框架.md) | 胡峰 solarhu| 2023-07-25 |
+| 0009 | P,I | [openEuler LTS 版本内核 KABI 变更策略](oEEP-0009%20openEuler%20LTS%20版本内核%20KABI%20变更策略.md) | 谢秀奇 xiexiuqi at huawei.com | 2023-5-9 |
 
 ## oEEP 类型分类：
 - D (Document, 信息整理): 信息梳理形成的文档。此类 oEPP 包含社区索引，指南，规范或其他和 openEuler 相关的信息。
