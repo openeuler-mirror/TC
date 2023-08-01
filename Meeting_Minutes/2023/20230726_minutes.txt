@@ -1,0 +1,29 @@
+Data 日期： 2023-7-26
+Time 时间：10:00-12:00 (UTC/GMT+8:00)
+会议链接：https://us06web.zoom.us/j/85026927482?pwd=a2JXUU43eXUvc3JGUit5Q0VWczlsZz09
+会议纪要：https://etherpad.openeuler.org/p/TC-meetings
+Host 会议主持人： 胡欣蔚
+Next Host 下次会议主持人：胡亚弟
+Participants 与会人：魏刚、陈祺德，武碧洁，侯健, Xiaosu Li, 谢秀奇, Eugene Cheng，刘恺，吕从庆，李永强,任慰、卞乃猛，熊伟、曹志、刘超、刘彦泽、刘寿永、王建民、胡峰、王志钢、张智博，王经纬，苏锦铃、赵川峰、王伶卓
+遗留事项跟踪：
+遗留问题：与 QLogic 沟通 22.03 LTS SP3 KABI 策略，以及驱动发布策略。支撑下次 TC 会议决策。 -  杜开田/谢秀奇
+  Mavell每年发两个驱动版本，会跟进openEuler社区最新的SP版本。当前对openEuler LTS 的KABI白名单没有额外诉求。
+  熊博希望和驱动厂商从社区角度建立更紧密和例行的合作，开田提出后续会通过 issue 的方式来跟进。
+遗留问题:    关于kafka从bigdata SIG迁移到message-middleware SIG的沟通 --- 熊伟
+  已和bigdata sig沟通，bigdata sig承诺在例行会议上讨论并反馈集体意见。此遗留问题关闭。
+
+议题：
+1. oEEP--0006 openEuler内核kconfig翻新及内核包拆分 -- 刘恺
+  - 兼容性认证需要考虑扩大范围以后的内核模块是否可以豁免
+  - 围绕内核拆包的工作，刘恺牵头个小团队，熊伟赞助
+  - 同意 oEEP 0006 进入 Accept 状态
+2. openEuler 操作系统技术白皮书（创新项目总览）项目提交流程-程鑫鑫
+  - 基于社区版本发布范围和 openEuler TC 协调社区评选，决定技术白皮书收录项目的范围
+  - 由 Marketing SIG 设计决定
+3.openEuler 24.03计划同步 -- 苏锦铃
+  因为网络问题无法正常分享，延期到下次会议再讨论
+4.openresty sig 及相关代码仓迁移 - 胡欣蔚
+   因为 openresty sig 成员投入方向的调整，不能再保持在这个方向的投入
+   当前 openresty 已作为社区发行版的一部分，不适合直接衰退。
+   建议由 TC 接管 openresty 的代码仓管理，并且提醒 release sig 后续对相关代码仓不再拉取版本分支。
+   TC 和 release sig 后续对LTS代码仓的选择，应该提前关注生命周期内的维护投入。
