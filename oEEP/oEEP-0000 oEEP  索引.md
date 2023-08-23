@@ -23,7 +23,8 @@
 | 0008 | P,I | [openEuler智能补丁管理框架](oEEP-0008%20openEuler智能补丁管理框架.md) | 胡峰 solarhu| 2023-07-25 |
 | 0009 | P,I | [openEuler LTS 版本内核 KABI 变更策略](oEEP-0009%20openEuler%20LTS%20版本内核%20KABI%20变更策略.md) | 谢秀奇 xiexiuqi at huawei.com | 2023-5-9 |
 | 0010 | D,I | [openEuler服务要求参考基线](oEEP-0010%20openEuler服务要求参考基线.md) | 邓晖龙 denghuilong88 at huawei.com | 2023-8-2 |
-| 0011 | P,I | [openEuler SIG 组孵化流程优化](oEEP-0011%20openEuler%20SIG%20组孵化流程优化.md) | 熊伟 (xiongwei888 at huawei dot com) 胡欣蔚 (shinwell_hu at openeuler dot sh)
+| 0011 | S,I | [openEuler多版本内核支持](oEEP-0011%20openEuler多版本内核支持.md) | 刘恺 kai.liu at xfusion.com | 2023-08-09 |
+| 0012 | P,I | [openEuler SIG 组孵化流程优化](oEEP-0012%20openEuler%20SIG%20组孵化流程优化.md) | 熊伟 (xiongwei888 at huawei dot com) 胡欣蔚 (shinwell_hu at openeuler dot sh)
 
 ## oEEP 类型分类：
 - D (Document, 信息整理): 信息梳理形成的文档。此类 oEPP 包含社区索引，指南，规范或其他和 openEuler 相关的信息。
