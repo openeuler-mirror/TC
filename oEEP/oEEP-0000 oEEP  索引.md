@@ -24,7 +24,7 @@
 | 0009 | P,I | [openEuler LTS 版本内核 KABI 变更策略](oEEP-0009%20openEuler%20LTS%20版本内核%20KABI%20变更策略.md) | 谢秀奇 xiexiuqi at huawei.com | 2023-5-9 |
 | 0010 | D,I | [openEuler服务要求参考基线](oEEP-0010%20openEuler服务要求参考基线.md) | 邓晖龙 denghuilong88 at huawei.com | 2023-8-2 |
 | 0011 | S,I | [openEuler多版本内核支持](oEEP-0011%20openEuler多版本内核支持.md) | 刘恺 kai.liu at xfusion.com | 2023-08-09 |
-| 0012 | P,I | [openEuler多版本内核支持](oEEP-0012%20openEuler软件包非upstream支持多架构代码提交规则.md) | 叶青龙 yeqinglong@kylinsec.com.cn,胡欣蔚 shinwell_hu at openeuler.sh | 2023-08-17 |
+| 0012 | P,I | [openEuler软件包非upstream支持多架构代码提交规则](oEEP-0012%20openEuler软件包非upstream支持多架构代码提交规则.md) | 叶青龙 yeqinglong@kylinsec.com.cn,胡欣蔚 shinwell_hu at openeuler.sh | 2023-08-17 |
 
 ## oEEP 类型分类：
 - D (Document, 信息整理): 信息梳理形成的文档。此类 oEPP 包含社区索引，指南，规范或其他和 openEuler 相关的信息。
