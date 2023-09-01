@@ -4,7 +4,7 @@
 摘要:     容器镜像发布流程定义与完善
 作者:     姜逸坤 (yikunkero at gmail.com), 鲁卫军 (wjunlu217 at gmail.com)
 状态:     活跃
-编号:     oEEP-0004
+编号:     oEEP-0005
 创建日期:  2023-05-10
 修订日期:  2023-05-10
 ---
@@ -41,10 +41,6 @@ docker run -ti openeuler-20.03-lts bash
 - openEuler Infra SIG：负责一键发布组件的设计、开发与维护，集成容器官方发布至Release流程中，由Infra SIG的维护者进行代码审核和最终镜像发布到容器镜像仓。
 - openEuler Cloud Native SIG：负责原始容器镜像的裁剪、发布及代码审核。
 
-### 目前存在问题
-- 问题1：当前容器镜像发布至第三方仓流程未集成至Release流程，需要在版本发布后一天，人为触发。
-- 问题2：当前Release发布的原始文件(openEuler-docker.aarch64.tar.xz)，仅在首个版本进行发布，而update版本未进行发布。
-
 ## 方案的详细描述:
 ### 1. 命名、标签规则
 1. 名称: openeuler/openeuler
@@ -53,19 +49,20 @@ docker run -ti openeuler-20.03-lts bash
     - 20.03 → 代表20.03系列的推荐版本
     - latest → 代表最新的推荐版本，通常为LTS版本的长周期维护版本（例如22.03-lts-sp1）
 
-| Version                 | Repo                                                           | Docker Tags   | Special Tags  |
-|-------------------------|----------------------------------------------------------------|---------------|---------------|
-| openEuler-20.03-LTS     | https://repo.openeuler.org/openEuler-20.03-LTS/docker_img/     | 20.03-lts     |               |
-| openEuler-20.03-LTS-SP1 | https://repo.openeuler.org/openEuler-20.03-LTS-SP1/docker_img/ | 20.03-lts-sp1 |               |
-| openEuler-20.03-LTS-SP2 | https://repo.openeuler.org/openEuler-20.03-LTS-SP2/docker_img/ | 20.03-lts-sp2 |               |
-| openEuler-20.03-LTS-SP3 | https://repo.openeuler.org/openEuler-20.03-LTS-SP2/docker_img/ | 20.03-lts-sp3 | 20.03         |
-| openEuler-20.09         | https://repo.openeuler.org/openEuler-20.09/docker_img/         | 20.09         |               |
-| openEuler-21.03         | https://repo.openeuler.org/openEuler-21.03/docker_img/         | 21.03         |               |
-| openEuler-21.09         | https://repo.openeuler.org/openEuler-21.09/docker_img/         | 21.03         |               |
-| openEuler-22.03-LTS     | https://repo.openeuler.org/openEuler-21.09/docker_img/         | 22.03-lts     |               |
-| openEuler-22.03-LTS-SP1 | https://repo.openeuler.org/openEuler-21.09/docker_img/         | 22.03-lts-sp1 | 22.03, latest |
-| openEuler-22.09         | https://repo.openeuler.org/openEuler-22.09/docker_img/         | 22.09         |               |
-| openEuler-23.03         | https://repo.openeuler.org/openEuler-23.03/docker_img/         | 23.03         |               |
+| Version                 | Repo                                                                | Docker Tags   | Special Tags  |
+|-------------------------|---------------------------------------------------------------------|---------------|---------------|
+| openEuler-20.03-LTS     | https://repo.openeuler.org/openEuler-20.03-LTS/docker_img/          | 20.03-lts     |               |
+| openEuler-20.03-LTS-SP1 | https://repo.openeuler.org/openEuler-20.03-LTS-SP1/docker_img/      | 20.03-lts-sp1 |               |
+| openEuler-20.03-LTS-SP2 | https://repo.openeuler.org/openEuler-20.03-LTS-SP2/docker_img/      | 20.03-lts-sp2 |               |
+| openEuler-20.03-LTS-SP3 | https://repo.openeuler.org/openEuler-20.03-LTS-SP2/docker_img/      | 20.03-lts-sp3 | 20.03         |
+| openEuler-20.09         | https://archives.openeuler.openatom.cn/openEuler-20.09/docker_img/  | 20.09         |               |
+| openEuler-21.03         | https://archives.openeuler.openatom.cn/openEuler-21.03/docker_img/  | 21.03         |               |
+| openEuler-21.09         | https://archives.openeuler.openatom.cn/openEuler-21.09/docker_img/  | 21.03         |               |
+| openEuler-22.03-LTS     | https://repo.openeuler.org/openEuler-22.03-LTS/docker_img/          | 22.03-lts     |               |
+| openEuler-22.03-LTS-SP1 | https://repo.openeuler.org/openEuler-22.03-LTS-SP1/docker_img/      | 22.03-lts-sp1 | 22.03, latest |
+| openEuler-22.03-LTS-SP2 | https://repo.openeuler.org/openEuler-22.03-LTS-SP2/docker_img/      | 22.03-lts-sp2 |               |
+| openEuler-22.09         | https://repo.openeuler.org/openEuler-22.09/docker_img/              | 22.09         |               |
+| openEuler-23.03         | https://repo.openeuler.org/openEuler-23.03/docker_img/              | 23.03         |               |
 
 ### 2. 代码仓库
 
@@ -80,20 +77,21 @@ https://gitee.com/openeuler/openeuler-docker-images
 - (已有发布) 对于首个版本发布，发布至：
 https://repo.openeuler.org/openEuler-{VERSION}/docker_img/
 
-- (暂无发布) 对于update版本发布，发布至：
+- (已有发布) 对于update版本发布，发布至：
 https://repo.openeuler.org/openEuler-{VERSION}/docker_img/update/YYYY-MM-DD/
 
 2. 通过"一键发布工具"获取发布的容器原始文件，发布至第三方容器仓库。
-- 目前"一键发布工具"通过Github Action进行一键发布(例如23.03的[发布](https://github.com/Yikun/openeuler-docker-images/pull/13))。
-- 后续考虑将抽象其为一个工具/组件，用来完成一键发布，以方便release过程集成。该工具由openEuler Infrastructure SIG维护，形式如下：
+- "一键发布工具" [eulerpublisher](https://gitee.com/openeuler/eulerpublisher)已经上线，由openEuler Infrastructure SIG维护，形式如下：
 ```
-- 下载：
-${euler_publisher} container download --version ${VERSION} --repo openeuler/openeuler
-- 发布：
-${euler_publisher} container push --version ${VERSION} --repo openeuler/openeuler
+- 获取：
+eulerpublisher container prepare --version ${VERSION}
+- 推送：
+eulerpublisher container push --version ${VERSION} --repo openeuler/openeuler
 - 测试：
-${euler_publisher} container check --version ${VERSION} --repo openeuler/openeuler
+eulerpublisher container check --version ${VERSION} --repo openeuler/openeuler
 
-- 一键下载、测试、发布
-${euler_publisher} container publish --version ${VERSION} --repo openeuler/openeuler
+- 一键获取、测试、推送
+eulerpublisher container publish --version ${VERSION} --repo openeuler/openeuler
 ```
+- 目前[eulerpublisher](https://gitee.com/openeuler/eulerpublisher)通过Jenkins任务进行容器进行镜像发布(例如20.03、22.03维护版本的update[发布](https://jenkins.osinfra.cn/job/luweijun/job/eulerpublisher/47/))。
+
