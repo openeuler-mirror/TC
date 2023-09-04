@@ -41,6 +41,10 @@ docker run -ti openeuler-20.03-lts bash
 - openEuler Infra SIG：负责一键发布组件的设计、开发与维护，集成容器官方发布至Release流程中，由Infra SIG的维护者进行代码审核和最终镜像发布到容器镜像仓。
 - openEuler Cloud Native SIG：负责原始容器镜像的裁剪、发布及代码审核。
 
+### 本oEEP解决的问题
+- 问题1：当前容器镜像发布至第三方仓流程未集成至Release流程，需要在版本发布后一天，人为触发。
+- 问题2：当前Release发布的原始文件(openEuler-docker.aarch64.tar.xz)，仅在首个版本进行发布，而update版本未进行发布。
+
 ## 方案的详细描述:
 ### 1. 命名、标签规则
 1. 名称: openeuler/openeuler
