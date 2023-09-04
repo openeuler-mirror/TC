@@ -79,6 +79,7 @@ https://repo.openeuler.org/openEuler-{VERSION}/docker_img/
 
 - (已有发布) 对于update版本发布，发布至：
 https://repo.openeuler.org/openEuler-{VERSION}/docker_img/update/YYYY-MM-DD/
+；最新update版本覆盖拷贝至：https://repo.openeuler.org/openEuler-{VERSION}/docker_img/update/current/。
 
 2. 通过"一键发布工具"获取发布的容器原始文件，发布至第三方容器仓库。
 - "一键发布工具" [eulerpublisher](https://gitee.com/openeuler/eulerpublisher)已经上线，由openEuler Infrastructure SIG维护，形式如下：
