@@ -1,5 +1,5 @@
 ---
-标题:     openEuler软件包非upstream支持多架构
+标题:     openEuler软件包非upstream支持多架构代码提交规则
 类别:     流程设计
 摘要:     制品仓软件包的非upstream支持
 作者:     叶青龙 (yeqinglong@kylinsec.com.cn) 胡欣蔚 (shinwell_hu@openeuler.sh)
