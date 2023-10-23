@@ -6,13 +6,13 @@
 状态:     活跃
 编号:     oEEP-0005
 创建日期:  2023-05-10
-修订日期:  2023-05-10
+修订日期:  2023-10-23
 ---
 
 ## 动机/问题描述:
 
 ### 初衷
-openEuler官方网站目前仅在发布了容器镜像的原始文件，如果未上传至任何三方docker镜像仓，开发者们不得不通过如下命令进行加载：
+目前仅在openEuler官方网站发布了容器镜像的原始文件，如果未上传至任何三方docker镜像仓，开发者们不得不通过如下命令进行加载：
 ```
 wget https://repo.openeuler.org/openEuler-20.03-LTS/docker_img/aarch64/openEuler-docker.aarch64.tar.xz
 docker load < openEuler-docker.aarch64.tar.xz
@@ -36,7 +36,7 @@ docker run -ti openeuler-20.03-lts bash
 - 作为OpenStack的上游开发者，我希望基于openEuler容器镜像定制OpenStack Kolla（容器组件）。
 - 作为HPC领域的运维人员，部分软件依赖容器镜像（例如[Warewulf 4](https://warewulf.org/docs/development/quickstart/el7.html#pull-and-build-the-vnfs-container-and-kernel)），我希望通过容器镜像快速部署HPC集群。
 
-### 相关SIG组及指责
+### 相关SIG组及职责
 - openEuler Release SIG：发布原始容器镜像的版本及更新版本，协助集成容器官方发布至Release流程中，随版本推送容器镜像，由每个版本的Release Manager负责发布至https://repo.openeuler.org/。
 - openEuler Infra SIG：负责一键发布组件的设计、开发与维护，集成容器官方发布至Release流程中，由Infra SIG的维护者进行代码审核和最终镜像发布到容器镜像仓。
 - openEuler Cloud Native SIG：负责原始容器镜像的裁剪、发布及代码审核。
@@ -44,6 +44,7 @@ docker run -ti openeuler-20.03-lts bash
 ### 本oEEP解决的问题
 - 问题1：当前容器镜像发布至第三方仓流程未集成至Release流程，需要在版本发布后一天，人为触发。
 - 问题2：当前Release发布的原始文件(openEuler-docker.aarch64.tar.xz)，仅在首个版本进行发布，而update版本未进行发布。
+- 问题3：当前缺少AI容器发布到第三方仓库的流程，需要进行规范。
 
 ## 方案的详细描述:
 ### 1. 命名、标签规则
@@ -73,7 +74,14 @@ docker run -ti openeuler-20.03-lts bash
 https://gitee.com/openeuler/openeuler-docker-images
 
 ### 3. 代码合入与审核
-1. 上传：上传dockerfile、脚本至openeuler-docker-images仓库。
+1. 上传：上传dockerfile、meta.yml、脚本至openeuler-docker-images仓库。
+
+特殊地，mete.yml用于制作AI容器镜像，其中每一对<key, value>的内容如下：
+- tag (key): 镜像的标签
+- Dockerfiel_path (value): 制作标签为tag镜像的Dockerfile保存路径
+
+因此，AI容器镜像的标签不遵循上文对原始容器镜像的标签规范。
+
 2. 审核：由Cloud Native SIG Maintainer进行审核后合入。
 
 ### 4. 发布流程
@@ -86,7 +94,7 @@ https://repo.openeuler.org/openEuler-{VERSION}/docker_img/update/YYYY-MM-DD/
 ；最新update版本覆盖拷贝至：https://repo.openeuler.org/openEuler-{VERSION}/docker_img/update/current/。
 
 2. 通过"一键发布工具"获取发布的容器原始文件，发布至第三方容器仓库。
-- "一键发布工具" [eulerpublisher](https://gitee.com/openeuler/eulerpublisher)已经上线，由openEuler Infrastructure SIG维护，形式如下：
+- "一键发布工具"——[EulerPublisher](https://gitee.com/openeuler/eulerpublisher)已经上线，由openEuler Infrastructure SIG维护，形式如下：
 ```
 - 获取：
 eulerpublisher container prepare --version ${VERSION}
@@ -98,5 +106,11 @@ eulerpublisher container check --version ${VERSION} --repo openeuler/openeuler
 - 一键获取、测试、推送
 eulerpublisher container publish --version ${VERSION} --repo openeuler/openeuler
 ```
-- 目前[eulerpublisher](https://gitee.com/openeuler/eulerpublisher)通过Jenkins任务进行容器进行镜像发布(例如20.03、22.03维护版本的update[发布](https://jenkins.osinfra.cn/job/luweijun/job/eulerpublisher/47/))。
+- 目前EulerPublisher通过Jenkins任务进行容器进行镜像发布(例如20.03、22.03维护版本的update[发布](https://jenkins.osinfra.cn/job/luweijun/job/eulerpublisher/47/))。
+
+3. 通过"一键发布工具"，基于原始容器制作AI容器镜像，发布至第三方容器仓库。
+```
+# EulerPulisher一键发布AI容器镜像
+eulerpublisher container publisher --meta meta.yml
+```
 
