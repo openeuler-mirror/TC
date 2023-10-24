@@ -21,18 +21,25 @@ NVIDIA、AMD、昇腾等不同算力供应方分别推出各自的SDK以及各�
 | Softwares | `base`: CUDA runtime (cudart) <br>`runtime`: `base` + CUDA math libraries + NCCL + cuDNN <br>`devel`: `runtime` + tools for building CUDA images | ROCm + pytorch <br> ROCm + tensorflow |
 | Tags      | `<cuda-version>-base/runtime/devel-<os><os-vsesion>` <br>for example, `12.2.0-runtime-ubuntu20.04` | - `rocm<rocm-version>_<os><os-version>_py<py-version>_pytorch_<pytorch-version>`    <br> - `rocm<rocm-version>-<os><os-version>-tf<tf-version>-dev` <br> for example, `rocm5.7_ubuntu22.04_py3.10_pytorch_2.0.1`  |
 
-通过对主流厂商发布AI容器镜像的分析，发现
 1. 软件栈
 
-尽管不同厂商对AI容器镜像的预装软件内容存在差异，但软件栈分层基本相似，可归纳为以下几层
+- NVIDIA提供的`base`镜像（见[https://hub.docker.com/r/nvidia/cuda](https://hub.docker.com/r/nvidia/cuda)）中封装的CUDA和cuDNN来自于[gitlab.com/nvidia/cuda](https://gitlab.com/nvidia/container-images/cuda) ，`runtime`镜像中的nvidia-container-runtime来自于 https://github.com/NVIDIA/nvidia-container-runtime。
+- AMD的镜像（见https://hub.docker.com/r/rocm/pytorch、https://hub.docker.com/r/rocm/tensorflow）中预装了ROCm(https://github.com/RadeonOpenCompute/ROCm)、pytorch或tensorflow、以及配套的python版本。
+
+尽管不同厂商镜像中预装的软件内容存在差异，但软件栈分层基本相似，加上大模型应用，则AI容器镜像可归纳为以下几层
 ```mermaid
-graph TB;
-A[(<br>Tools <br><br> AI Framework <br><br> SDK)]
+graph LR;
+A[(<br> LLMs <br> Tools <br> AI Framework <br> SDK)]
 ```
+- LLMs: 大模型应用
+- Tools: 模型配套工具
+- AI Framework: AI框架，如pytorch, tensorflow等
+- SDK: 提供不同算力的SDK
+
 
 2. 镜像TAG
 
-已发布的AI容器镜像Tag一般由镜像中预装软件和版本信息组合而成，通常为：`<sdk><sdk-version>-<os><os-version>-<framework><framework-version>`
+综合来看，NVIDIA和AMD的AI容器镜像tag一般由镜像中预装软件和版本信息组合而成，通常为：`<sdk><sdk-version>-<os><os-version>-<framework><framework-version>`
 
 ### 本oEEP的目的
 指导不同算力设备的开发者，如何制作基于openEuler的AI容器镜像。
@@ -44,8 +51,8 @@ A[(<br>Tools <br><br> AI Framework <br><br> SDK)]
 - AI框架镜像：在基础SDK镜像之上，包含AI框架的镜像，Tag为`<framework><framework-version>-<sdk><sdk-version>-oe<oe-version>`，例如，pytorch2.1.0-cann7.0.RC1.alpha002-oe2203sp2
 - 大模型应用镜像：在AI框架镜像之上，包含AI应用的镜像`<LLMs>-<framework><framework-version>-<sdk><sdk-version>-oe<oe-version>`，例如，chatglm6b-cann7.0.RC1.alpha002-pytorch2.1.0-oe2203sp2表示部署chatglm-6b大模型、包含cann-7.0.RC1.alpha002和pytorch 2.1.0的openEuler-22.03-LTS-SP2容器镜像
 
+对应开发环境的容器镜像，其Tag除上述信息外在尾部增加`-dev`字段显式标明，如：pytorch2.1.0-cann7.0.RC1.alpha002-oe2203sp2-dev。
+
 ### 镜像发布（参考[oEEP-0005](./oEEP-0005%20openEuler%E5%AE%98%E6%96%B9%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B.md)）
 - AI容器镜像构建依赖meta.yml文件，文件内每一对<key, value>指明构建镜像的Tag和Dockerfile
 - AI容器镜像由EulerPublisher根据meta.yml构建并发布到对应的镜像仓库
-
-

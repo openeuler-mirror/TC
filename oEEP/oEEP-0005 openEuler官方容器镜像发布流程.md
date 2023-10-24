@@ -76,9 +76,9 @@ https://gitee.com/openeuler/openeuler-docker-images
 ### 3. 代码合入与审核
 1. 上传：上传dockerfile、meta.yml、脚本至openeuler-docker-images仓库。
 
-特殊地，mete.yml用于制作AI容器镜像，其中每一对<key, value>的内容如下：
-- tag (key): 镜像的标签
-- Dockerfiel_path (value): 制作标签为tag镜像的Dockerfile保存路径
+特殊地，meta.yml用于制作AI容器镜像，其中每一对<key, value>的内容如下：
+- tag: 镜像的标签
+- file: 制作镜像的Dockerfile
 
 因此，AI容器镜像的标签不遵循上文对原始容器镜像的标签规范。
 
