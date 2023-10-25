@@ -1,0 +1,38 @@
+Data 日期： 2023-09-20
+Time 时间：10:00-12:00
+会议纪要：https://etherpad.openeuler.org/p/TC-meetings
+会议链接：https://bmeeting.huaweicloud.com:36443/#/j/968175301
+Host 会议主持人：任慰 
+Next Host 下次会议主持人：石勇
+Participants 与会人：魏刚、胡峰、卞乃猛，胡欣蔚，王建民，吕从庆, 任慰，田俊，李永强，侯健，曹志，王志钢，陈棋德，熊伟，郑振宇，刘恺、王伶卓、谢秀奇、朱健伟、赵川峰
+遗留问题：
+
+议题：
+* oEEP-0006决策 - 刘恺 ，https://gitee.com/openeuler/kernel/issues/I7VEEV?from=project-issue&q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc
+  * 以方案5为基础：kernel-core，-modules，-modules-extras
+    - 投票结果：
+      N：
+      A: 
+      Y:  任慰，吕从庆、田俊，王伶卓、 熊伟、王建民、谢秀奇、魏刚、卞乃猛，胡欣蔚，曹志，陈棋德，胡亚弟，候健，李永强，王志钢
+        （16票赞成 > 2/3 TC 成员数（21）， 通过）
+    -  需要进一步讨论的：各个包的内容和范围
+
+* WEB SIG成立决策 （汇报人不在，顺延到下一次TC会议） 
+
+* 安全委员会主席魏刚卸任，经安全委员会讨论选举，由朱健伟接任安全委员会主席。同时安全委员会主席自然成为技术委员会委员。在技术委员会例行会议上同步该情况。 -- 魏刚，朱建伟 
+
+* openEuler 社区优秀项目评选启动 -- 胡欣蔚
+  -  9月开始通告，启动流程
+  - 动议人：胡欣蔚，结果：通过    
+
+* ARM SIG 成立申请 - 毛泓博
+  - 汇报人: 飞腾 帅家坤
+    * 任慰：ARM SIG要考虑嵌入式领域的工作
+    * 熊伟：对于公众号，支持鼓励SIG通过各种渠道去进行宣传，但是保证重要事宜要在openEuler的公众号进行发布，SIG的公众号挂openEuler和开放原子基金会的logo
+    * 熊伟：通过这个SIG要和arm，linaro等国际进行链接
+    * 谢秀奇：建议加入kernel的maintainer加入ARM SIG，加强两个SIG的协同
+    * 赵川峰：加强和compiler SIG的协同。
+    * 动议： 成立ARM SIG， Mentor: 谢秀奇， 帮助ARM SIG成立，重点梳理ARM SIG与Kernel SIG乃至其他SIG的关系
+      - 结果：通过
+
+
