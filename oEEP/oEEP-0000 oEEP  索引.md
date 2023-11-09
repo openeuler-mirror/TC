@@ -26,6 +26,7 @@
 | 0011 | S,I | [openEuler多版本内核支持](oEEP-0011%20openEuler多版本内核支持.md) | 刘恺 kai.liu at xfusion.com | 2023-08-09 |
 | 0012 | P,I | [openEuler软件包非upstream支持多架构代码提交规则](oEEP-0012%20openEuler软件包非upstream支持多架构代码提交规则.md) | 叶青龙 yeqinglong@kylinsec.com.cn,胡欣蔚 shinwell_hu at openeuler.sh | 2023-08-17 |
 | 0013 | P,I | [openEuler SIG 组孵化流程优化](oEEP-0013%20openEuler%20SIG%20组孵化流程优化.md) | 熊伟 (xiongwei888 at huawei dot com) 胡欣蔚 (shinwell_hu at openeuler dot sh)
+| 0014 | P,I | [openEuler AI容器镜像软件栈规范](oEEP-0014%20openEuler%20AI容器镜像软件栈规范.md) | 鲁卫军（wjunlu217 at gmail.com）| 2023-10-23 |
 | 0015 | P,I | [openEuler官方虚拟机镜像发布流程](oEEP-0015%20openEuler官方虚拟机镜像发布流程.md) | 鲁卫军（wjunlu217 at gmail.com）| 2023-10-24 |
 
 
