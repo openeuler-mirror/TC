@@ -29,7 +29,6 @@
 | 0014 | P,I | [openEuler AI容器镜像软件栈规范](oEEP-0014%20openEuler%20AI容器镜像软件栈规范.md) | 鲁卫军（wjunlu217 at gmail.com）| 2023-10-23 |
 | 0015 | P,I | [openEuler官方虚拟机镜像发布流程](oEEP-0015%20openEuler官方虚拟机镜像发布流程.md) | 鲁卫军（wjunlu217 at gmail.com）| 2023-10-24 |
 
-
 ## oEEP 类型分类：
 - D (Document, 信息整理): 信息梳理形成的文档。此类 oEPP 包含社区索引，指南，规范或其他和 openEuler 相关的信息。
 - P (Process, 流程设计) -- openEuler 社区的流程设计，包括社区治理，CI/CD，测试等相关要求。
