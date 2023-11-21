@@ -4,9 +4,9 @@
 摘要:     SIG 组孵化
 作者:     熊伟 (xiongwei888 at huawei dot com) 胡欣蔚 (shinwell_hu at openeuler dot sh)
 状态:     初始化
-编号:     oEEP-0011
+编号:     oEEP-0013
 创建日期:  2023-08-17
-修订日期:  2023-08-22
+修订日期:  2023-11-21
 
 ---
 
@@ -72,6 +72,6 @@ openEuler 社区中历史及当前部分 SIG 中存在的问题：
 ### SIG 成熟度的区分
 
 当前 sig-info.yaml 中包含了可用的 mature_level 字段，但没有明确定义 mature_level 字段的含义。在此做出定义：
-startup: SIG 基本信息清晰，但其他评价维度都无法给出评价。此时 技术委员会可以批准 建立 SIG 的PR 合入，此时 SIG 不适合直接建立 制品仓。技术委员会在一个月内指定导师。
-incubate: SIG 的沟通驱动通畅，其他各个评价维度有部分进展。经过导师在技术委员会沟通后，同意进入 incubate 状态。此时 SIG 可以建立相应的制品仓。
-graduate: SIG 在各个评价维度都较出色，可以独立运作。经 SIG maintainer 集体讨论申请，由技术委员会同意，进入 graduate 状态。 graduate 状态 SIG 的 maintainer 可以作为其他 SIG 的导师。
+- startup: SIG 基本信息清晰，但其他评价维度都无法给出评价。此时技术委员会可以批准建立 SIG 的 PR 合入，此时 SIG 不适合直接建立制品仓。技术委员会在一个月内指定导师。
+- incubate: SIG 的沟通驱动通畅，其他各个评价维度有部分进展。经过导师在技术委员会沟通后，同意进入 incubate 状态。此时 SIG 可以建立相应的制品仓。
+- graduate: SIG 在各个评价维度都较出色，可以独立运作。经 SIG maintainer 集体讨论申请，由技术委员会同意，进入 graduate 状态。 graduate 状态 SIG 的 maintainer 可以作为其他 SIG 的导师。
