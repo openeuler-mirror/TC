@@ -1,0 +1,7 @@
+root = true
+
+[*.{md,txt}]
+# 使用UNIX新行风格
+end_of_line = lf
+# 默认使用UTF-8编码
+charset = utf-8
