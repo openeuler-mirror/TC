@@ -42,12 +42,17 @@ docker run -ti openeuler-20.03-lts bash
 - openEuler Cloud Native SIG：负责原始容器镜像的裁剪、发布及代码审核。
 
 ### 本oEEP解决的问题
-- 问题1：当前容器镜像发布至第三方仓流程未集成至Release流程，需要在版本发布后一天，人为触发。
+- 问题1：当前官方容器镜像发布至第三方仓流程未集成至Release流程，需要在版本发布后一天，人为触发。
 - 问题2：当前Release发布的原始文件(openEuler-docker.aarch64.tar.xz)，仅在首个版本进行发布，而update版本未进行发布。
-- 问题3：当前缺少AI容器发布到第三方仓库的流程，需要进行规范。
+- 问题3：当前缺少用于指导应用类容器镜像发布到第三方仓库的规范。
 
 ## 方案的详细描述:
 ### 1. 命名、标签规则
+关于容器镜像，本oEEP提出两个概念：
+- 基础容器镜像：上文中提到的官方发布到 https://repo.openeuler.org/openEuler-{VERSION}/docker_img/ 的容器镜像均为基础镜像，基础镜像仅包含少量的基础软件。
+- 应用容器镜像：在基础镜像之上，安装特定场景应用软件的镜像，例如包含nginx，或AI软件栈的容器镜像等。
+
+#### 基础容器镜像
 1. 名称: openeuler/openeuler
 2. 标签: 以openEuler的版本名作为标签，例如：22.03-lts, 22.03-lts-sp1, 23.03
 3. 特殊标签:
@@ -59,7 +64,8 @@ docker run -ti openeuler-20.03-lts bash
 | openEuler-20.03-LTS     | https://repo.openeuler.org/openEuler-20.03-LTS/docker_img/          | 20.03-lts     |               |
 | openEuler-20.03-LTS-SP1 | https://repo.openeuler.org/openEuler-20.03-LTS-SP1/docker_img/      | 20.03-lts-sp1 |               |
 | openEuler-20.03-LTS-SP2 | https://repo.openeuler.org/openEuler-20.03-LTS-SP2/docker_img/      | 20.03-lts-sp2 |               |
-| openEuler-20.03-LTS-SP3 | https://repo.openeuler.org/openEuler-20.03-LTS-SP2/docker_img/      | 20.03-lts-sp3 | 20.03         |
+| openEuler-20.03-LTS-SP3 | https://repo.openeuler.org/openEuler-20.03-LTS-SP3/docker_img/      | 20.03-lts-sp3 |               |
+| openEuler-20.03-LTS-SP4 | https://repo.openeuler.org/openEuler-20.03-LTS-SP4/docker_img/      | 20.03-lts-sp4 | 20.03         |
 | openEuler-20.09         | https://archives.openeuler.openatom.cn/openEuler-20.09/docker_img/  | 20.09         |               |
 | openEuler-21.03         | https://archives.openeuler.openatom.cn/openEuler-21.03/docker_img/  | 21.03         |               |
 | openEuler-21.09         | https://archives.openeuler.openatom.cn/openEuler-21.09/docker_img/  | 21.03         |               |
@@ -68,6 +74,13 @@ docker run -ti openeuler-20.03-lts bash
 | openEuler-22.03-LTS-SP2 | https://repo.openeuler.org/openEuler-22.03-LTS-SP2/docker_img/      | 22.03-lts-sp2 |               |
 | openEuler-22.09         | https://repo.openeuler.org/openEuler-22.09/docker_img/              | 22.09         |               |
 | openEuler-23.03         | https://repo.openeuler.org/openEuler-23.03/docker_img/              | 23.03         |               |
+| openEuler-23.09         | https://repo.openeuler.org/openEuler-23.09/docker_img/              | 23.09         |               |
+
+#### 应用容器镜像
+1. 名称: openeuler/{app}，{app}为应用名称
+2. 标签: meta.yml文件指明应用容器镜像的tag和对应的Dockerfile，内容示例如下：
+- tag: 应用容器镜像的标签，格式为：`<app><app-version>-<os><os-version>`, 例如`pytorch2.1.0-oe2203sp2`
+- file: 制作镜像的Dockerfile
 
 ### 2. 代码仓库
 
@@ -76,15 +89,10 @@ https://gitee.com/openeuler/openeuler-docker-images
 ### 3. 代码合入与审核
 1. 上传：上传dockerfile、meta.yml、脚本至openeuler-docker-images仓库。
 
-特殊地，meta.yml用于制作AI容器镜像，其中每一对<key, value>的内容如下：
-- tag: 镜像的标签
-- file: 制作镜像的Dockerfile
-
-因此，AI容器镜像的标签不遵循上文对原始容器镜像的标签规范。
-
 2. 审核：由Cloud Native SIG Maintainer进行审核后合入。
 
 ### 4. 发布流程
+#### 基础容器镜像
 1. 由Release SIG发布"openEuler-docker.{arch}.tar.xz"至repo.openeuler.org。
 - (已有发布) 对于首个版本发布，发布至：
 https://repo.openeuler.org/openEuler-{VERSION}/docker_img/
@@ -97,20 +105,21 @@ https://repo.openeuler.org/openEuler-{VERSION}/docker_img/update/YYYY-MM-DD/
 - "一键发布工具"——[EulerPublisher](https://gitee.com/openeuler/eulerpublisher)已经上线，由openEuler Infrastructure SIG维护，形式如下：
 ```
 - 获取：
-eulerpublisher container prepare --version ${VERSION}
+eulerpublisher container base prepare --version ${VERSION}
 - 推送：
-eulerpublisher container push --version ${VERSION} --repo openeuler/openeuler
+eulerpublisher container base push --version ${VERSION} --repo openeuler/openeuler
 - 测试：
-eulerpublisher container check --version ${VERSION} --repo openeuler/openeuler
+eulerpublisher container base check --version ${VERSION} --repo openeuler/openeuler
 
 - 一键获取、测试、推送
-eulerpublisher container publish --version ${VERSION} --repo openeuler/openeuler
+eulerpublisher container base publish --version ${VERSION} --repo openeuler/openeuler
 ```
 - 目前EulerPublisher通过Jenkins任务进行容器进行镜像发布(例如20.03、22.03维护版本的update[发布](https://jenkins.osinfra.cn/job/luweijun/job/eulerpublisher/47/))。
 
-3. 通过"一键发布工具"，基于原始容器制作AI容器镜像，发布至第三方容器仓库。
+#### 应用容器镜像
+通过"一键发布工具"，基于原始容器制作应用容器镜像，发布至第三方容器仓库。
 ```
-# EulerPulisher一键发布AI容器镜像
-eulerpublisher container publisher --meta meta.yml
+# EulerPulisher一键发布应用容器镜像
+eulerpublisher container app publish --meta meta.yml
 ```
 
