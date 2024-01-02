@@ -30,6 +30,6 @@ The TC repo is to store all the information about openEuler TC, inclouding meeti
 | 10-11 | 田  俊 |  |
 | 10-25 | 吴峰光 |  |
 | 11-8  | 王建民 |  |
-| 11-22 | 王志钢 |  |
+| 11-22 | 王志钢 |1、 东方通申请捐赠轻舟Web管理软件开发平台   汇报人：王鹏亮（东方通）<br />2、东方通申请捐赠数据缓存中间件云原生管理平台项目    汇报人：吴亚东（东方通）<br />3、在openEuler成立SIG-BMC   汇报人：毛阿利（超聚变）<br />4、工控SIG组工作汇报及Xen项目引入申请    汇报人：郭皓 <guohao@kylinos.cn><br />5.   麒麟软件申请捐赠麒麟可信容器镜像构建工具（KTIB）    汇报人： 索小聪<suoxiaocong@kylinos.cn><br />  |
 | 12-6  | 熊  伟 |  |
 | 12-20 | 叶青龙 |  |
