@@ -70,8 +70,9 @@ docker run -ti openeuler-20.03-lts bash
 | openEuler-21.03         | https://archives.openeuler.openatom.cn/openEuler-21.03/docker_img/  | 21.03         |               |
 | openEuler-21.09         | https://archives.openeuler.openatom.cn/openEuler-21.09/docker_img/  | 21.03         |               |
 | openEuler-22.03-LTS     | https://repo.openeuler.org/openEuler-22.03-LTS/docker_img/          | 22.03-lts     |               |
-| openEuler-22.03-LTS-SP1 | https://repo.openeuler.org/openEuler-22.03-LTS-SP1/docker_img/      | 22.03-lts-sp1 | 22.03, latest |
+| openEuler-22.03-LTS-SP1 | https://repo.openeuler.org/openEuler-22.03-LTS-SP1/docker_img/      | 22.03-lts-sp1 |               |
 | openEuler-22.03-LTS-SP2 | https://repo.openeuler.org/openEuler-22.03-LTS-SP2/docker_img/      | 22.03-lts-sp2 |               |
+| openEuler-22.03-LTS-SP3 | https://repo.openeuler.org/openEuler-22.03-LTS-SP3/docker_img/      | 22.03-lts-sp3 | 22.03, latest |
 | openEuler-22.09         | https://repo.openeuler.org/openEuler-22.09/docker_img/              | 22.09         |               |
 | openEuler-23.03         | https://repo.openeuler.org/openEuler-23.03/docker_img/              | 23.03         |               |
 | openEuler-23.09         | https://repo.openeuler.org/openEuler-23.09/docker_img/              | 23.09         |               |
@@ -79,7 +80,8 @@ docker run -ti openeuler-20.03-lts bash
 #### 应用容器镜像
 1. 名称: openeuler/{app}，{app}为应用名称
 2. 标签: meta.yml文件指明应用容器镜像的tag和对应的Dockerfile，内容示例如下：
-- tag: 应用容器镜像的标签，格式为：`<app><app-version>-<os><os-version>`, 例如`pytorch2.1.0-oe2203sp2`
+- tag: 应用容器镜像的标签，格式为：`<app-version>-<os><os-version>`, 例如httpd的2.4.51版本应用镜像tag为：`2.4.51-oe2203sp2`。
+特殊地，由于AI容器镜像包含的软件栈较为复杂，为准确表达其镜像内容，tag规则参考[oEEP-0014](./oEEP-0014%20openEuler%20AI%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E8%BD%AF%E4%BB%B6%E6%A0%88%E8%A7%84%E8%8C%83.md)。
 - file: 制作镜像的Dockerfile
 
 ### 2. 代码仓库
@@ -117,9 +119,9 @@ eulerpublisher container base publish --version ${VERSION} --repo openeuler/open
 - 目前EulerPublisher通过Jenkins任务进行容器进行镜像发布(例如20.03、22.03维护版本的update[发布](https://jenkins.osinfra.cn/job/luweijun/job/eulerpublisher/47/))。
 
 #### 应用容器镜像
-通过"一键发布工具"，基于原始容器制作应用容器镜像，发布至第三方容器仓库。
+提交至https://gitee.com/openEuler/openeuler-docker-images的应用镜像Dockerfile，由EulerPublisher构建镜像进行验证，验证通过后发布至第三方容器仓库。
 ```
 # EulerPulisher一键发布应用容器镜像
-eulerpublisher container app publish --meta meta.yml
+eulerpublisher container app publish --repo openeuler/{APP_NAME} --tag {TAG}
 ```
 
