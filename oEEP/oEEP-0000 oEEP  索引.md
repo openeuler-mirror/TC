@@ -28,6 +28,7 @@
 | 0013 | P,I | [openEuler SIG 组孵化流程优化](oEEP-0013%20openEuler%20SIG%20组孵化流程优化.md) | 熊伟 (xiongwei888 at huawei dot com) 胡欣蔚 (shinwell_hu at openeuler dot sh)
 | 0014 | P,I | [openEuler AI容器镜像软件栈规范](oEEP-0014%20openEuler%20AI容器镜像软件栈规范.md) | 鲁卫军（wjunlu217 at gmail.com）| 2023-10-23 |
 | 0015 | P,I | [openEuler官方虚拟机镜像发布流程](oEEP-0015%20openEuler官方虚拟机镜像发布流程.md) | 鲁卫军（wjunlu217 at gmail.com）| 2023-10-24 |
+| 0016 | P,I | [openEuler新增branch-keeper角色作为仓库的分支守护者](oEEP-0016%20openEuler新增branch-keeper角色作为仓库的分支守护者.md) | 曹志（george at openeuler.sh）| 2024-02-08 |
 
 ## oEEP 类型分类：
 - D (Document, 信息整理): 信息梳理形成的文档。此类 oEPP 包含社区索引，指南，规范或其他和 openEuler 相关的信息。
