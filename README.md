@@ -27,7 +27,7 @@ The TC repo is to store all the information about openEuler TC, inclouding meeti
 | 10-23| 朱健伟  |  |
 | 11-6 | 谢秀奇 |  |
 | 11-20| 赵川峰 |  |
-| 12-4 | 卞乃猛(魏建刚) |  |
+| 12-4 | 魏建刚 |  |
 | 12-18| 陈祺德 |  |
 | 1-3  | 曹 志  |  |
 
