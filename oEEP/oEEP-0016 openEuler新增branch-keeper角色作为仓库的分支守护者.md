@@ -79,7 +79,7 @@ branches:
 |字段  | 类型 |  说明|
 |--|--|--|
 | repo_branch| 列表 |一组仓库、分支信息，这一组信息配置相同的分支守护者|
-| keeper| 字典 |描述分支守护者相关信息,包括gitee_id,name,organizaion,email等|
+| keeper| 字典 |描述分支守护者相关信息,包括gitee_id,name,organization,email等|
 
 
 
