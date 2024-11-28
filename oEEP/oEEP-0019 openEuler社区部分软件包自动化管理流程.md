@@ -33,6 +33,7 @@
 ### 2. 软件包引入流程适配
 对自维护包的引入流程，不再通过[修改community仓库配置文件](https://gitee.com/openeuler/community/blob/master/zh/contributors/create-package.md#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4)的操作方式来完成，
 建议使用社区[EUR工具](https://eur.openeuler.openatom.cn/coprs/)和[软件包贡献工具](https://software-pkg.openeuler.org/zh/package)配合完成，具体操作文档见社区博客（待添加）。
+
 软件包引入流程中需要配置软件包完整的上游信息，包括软件包源码仓库和版本维护信息等。
 
 ### 3. 自维护包自动化管理方案
@@ -43,7 +44,7 @@
  4. 自动提交：若本地构建验证通过，由机器人提交源码升级PR（含源码包+SPEC文件）；
 
 ### 4. 自维护包如何进入版本管理
-自维护包如果暂时没有在正式发布的版本中，又希望进入Release正式发布版本，和之前流程一致，可以通过申请PR加入版本，具体操作参见[软件包管理策略原则](https://gitee.com/openeuler/community/blob/master/zh/technical-committee/governance/software-management.md?skip_mobile=true#openeuler-%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5%E5%8E%9F%E5%88%99)
+自维护包如果暂时没有在正式发布的版本中，又希望进入Release正式发布版本，和之前流程一致，可以通过申请PR加入版本，具体操作参见[软件包管理策略原则](https://gitee.com/openeuler/community/blob/master/zh/technical-committee/governance/software-management.md?skip_mobile=true#openeuler-%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5%E5%8E%9F%E5%88%99)；
 
 ### 4. 自维护包责任主体
 软件包管理主要分为软件包引入、构建、升级、问题修复等；
@@ -56,12 +57,12 @@
 | 问题修复 | 软件需求方，社区开发者|
 
 ## 实施策略
-为减小设施影响：
- 1. 变更流程会逐步开展，前期使用一部分软件包试用打样；预计先试用python-语言依赖包约100个启动；
- 2. 待自动升级全流程技术成熟后，对上述提到的所有语言依赖包（python-，perl-，nodejs-等）开展自动化维护，约2K；
- 3. 待2K语言包自动化维护一段时间（约1-3月）后，再对社区满足条件的其他包全面开展自动化维护；
+为减小自动升级对社区产生影响：
+ 1. 变更流程会逐步开展，前期使用一部分软件包试用打样，预计优先试用python-语言依赖包约100个；
+ 2. 待自动升级全流程技术成熟后，对上述提到的所有语言依赖包（python-，perl-，nodejs-等）开展自动化维护，约2K软件包；
+ 3. 待2K语言包自动化维护一段时间（约3-6个月）后，再对社区满足条件的其他包全面开展自动化维护；
 
 ## 影响评估
-该变更主要会影响被社区定位为自维护包的这一部分软件包，影响软件包引入流程和维护流程。
+该变更主要影响被社区定位为自维护包的这一部分软件包，影响软件包引入流程和维护流程。
 
 
