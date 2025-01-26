@@ -32,6 +32,7 @@
 | 0017 | P,I | [openEuler软件质量分级&执行策略](oEEP-0017%20openEuler软件质量分级&执行策略.md) | 范佳臣@disnight (fanjiachen3 at huawei.com) | 2023-10-14 |
 | 0018 | D,A | [openEuler全局构建参数变更记录](oEEP-0018%20openEuler全局构建参数变更记录.md) | Funda Wang (fundawang at yeah.net) | 2024-09-16 |
 | 0019 | P,I | [openEuler社区部分软件包自动化管理流程](oEEP-0019%20openEuler社区部分软件包自动化管理流程.md) | 曹志 (george at openeuler.sh) | 2024-11-28 |
+| 0020 | S,A | [openEuler源码树与构建树分离策略](oEEP-0020%20openEuler源码树与构建树分离策略.md) | Funda Wang (fundawang at yeah.net) | 2024-10-23 |
 
 ## oEEP 类型分类：
 - D (Document, 信息整理): 信息梳理形成的文档。此类 oEPP 包含社区索引，指南，规范或其他和 openEuler 相关的信息。
