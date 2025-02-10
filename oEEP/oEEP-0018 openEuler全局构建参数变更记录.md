@@ -6,7 +6,7 @@
 状态:     活跃
 编号:     oEEP-0018
 创建日期: 2024-09-16
-修订日期: 2024-09-16
+修订日期: 2025-02-08
 ---
 
 ## 背景说明
@@ -108,3 +108,14 @@
 - https://wiki.mageia.org/en/Underlinking_issues_in_packaging
 - https://wiki.mageia.org/en/Overlinking_issues_in_packaging
 - https://wiki.debian.org/ToolChain/DSOLinking#Unresolved_symbols_in_shared_libraries
+
+### Fortify Level 防御级别可设置
+
+**作用**：当前默认构建选项中，包含级别为2的防御级别(Fortify level)，即在`CFLAGS`中生成`-Wp,-D_FORTIFY_SOURCE=2`。该选项旨在通过对 glibc 中的某些函数提供防御，以期拦截缓冲区溢出。考虑未来即将演进到级别为3的防御，以及个别软件包对此防御开关有进行屏蔽的需求，防御级别调整为软件包根据需要自行设置。
+
+**禁用说明**：
+系统的全局防御级别当前为2，与 openEuler 24.03 LTS 相比无变化。如软件包需要自定义防御级别或禁用防御，可自行在 spec 中增加下列语句：
+```
+%define _fortify_level 1 # 可降级为1级防御，即在 CFLAGS 中生成 -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=2
+%define _fortify_level 0 # 可禁用防御，即不在 CFLAGS 生成 -D_FORTIFY_SOURCE 的开关
+```
