@@ -2,11 +2,11 @@
 标题:     openEuler全局构建参数变更记录
 类别:     信息整理
 摘要:     全局构建参数变更记录
-作者:     Funda Wang (fundawang at yeah.net)
+作者:     Funda Wang (fundawang at yeah.net), Shinwell Hu (shinwell_hu@openeuler.sh)
 状态:     活跃
 编号:     oEEP-0018
 创建日期: 2024-09-16
-修订日期: 2025-02-08
+修订日期: 2025-03-03
 ---
 
 ## 背景说明
@@ -119,3 +119,23 @@
 %define _fortify_level 1 # 可降级为1级防御，即在 CFLAGS 中生成 -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=2
 %define _fortify_level 0 # 可禁用防御，即不在 CFLAGS 生成 -D_FORTIFY_SOURCE 的开关
 ```
+
+### 使用 mold 链接器来缩短链接时间
+
+mold 是一个现代化的高性能 Unix 链接器，比 LLVM 的 lld 还要快数倍。
+
+但由于mold连接器本身存在一定的功能欠缺（比如对kernel的不支持）我们决定只对一些编译时间较长的且 mold 支持的包使用 mold 链接，具体方案：
+
+** 开启方法 **
+
+mold 启用当前为白名单管理，/usr/lib/rpm/pkg_enable_mold_whitelist 文件中包含所有默认配置使用 mold 链接的软件包名称。
+
+** 禁用说明 **
+软件包在spec内可覆写_ld_use变量来切换链接器
+
+%define _ld_use %{nil}  取消因为软件包在白名单中所添加的mold选项
+%define _ld_use -fuse-ld=xxx 切换不同的链接器，注意当软件包自身显式定义了-fuse-ld 时，最后一个-fuse-ld 设置的链接器生效。
+
+** 参考链接 **
+
+- https://github.com/rui314/mold
