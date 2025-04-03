@@ -6,7 +6,7 @@
 状态:     活跃
 编号:     oEEP-0018
 创建日期: 2024-09-16
-修订日期: 2025-03-03
+修订日期: 2025-03-21
 ---
 
 ## 背景说明
@@ -116,26 +116,71 @@
 **禁用说明**：
 系统的全局防御级别当前为2，与 openEuler 24.03 LTS 相比无变化。如软件包需要自定义防御级别或禁用防御，可自行在 spec 中增加下列语句：
 ```
-%define _fortify_level 1 # 可降级为1级防御，即在 CFLAGS 中生成 -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=2
+%define _fortify_level 1 # 可降级为1级防御，即在 CFLAGS 中生成 -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=1
 %define _fortify_level 0 # 可禁用防御，即不在 CFLAGS 生成 -D_FORTIFY_SOURCE 的开关
 ```
 
 ### 使用 mold 链接器来缩短链接时间
 
-mold 是一个现代化的高性能 Unix 链接器，比 LLVM 的 lld 还要快数倍。
+mold 是一个现代化的高性能 Unix 链接器，比 lld 还要快数倍。
 
 但由于mold连接器本身存在一定的功能欠缺（比如对kernel的不支持）我们决定只对一些编译时间较长的且 mold 支持的包使用 mold 链接，具体方案：
 
-** 开启方法 **
+**开启方法**
 
-mold 启用当前为白名单管理，/usr/lib/rpm/pkg_enable_mold_whitelist 文件中包含所有默认配置使用 mold 链接的软件包名称。
+mold 启用当前为白名单管理，`/usr/lib/rpm/pkg_enable_mold_whitelist`文件中包含所有默认配置使用 mold 链接的软件包名称。
 
-** 禁用说明 **
-软件包在spec内可覆写_ld_use变量来切换链接器
-
+**禁用说明**
+软件包在spec内可覆写`_ld_use`变量来切换链接器
+```
 %define _ld_use %{nil}  取消因为软件包在白名单中所添加的mold选项
 %define _ld_use -fuse-ld=xxx 切换不同的链接器，注意当软件包自身显式定义了-fuse-ld 时，最后一个-fuse-ld 设置的链接器生效。
+```
 
-** 参考链接 **
+**参考链接**:
 
 - https://github.com/rui314/mold
+
+## 生效版本 master (目标 25.09 创新版本)
+
+### 在 ELF 文件中添加包信息
+
+**作用**：实践中，文件系统会糅杂着由操作系统供应商、独立软件供应商、服务商等不同机构通过不同形式置入的文件。尤其是 ELF 等二进制文件，在文件系统层级无法直观确认文件来源，一旦出现故障，排错困难。容器导致的跨操作系统混合部署，也将使得情况变得更加复杂。为此，默认开启链接器的专门开关，将构建 ELF 文件时的包信息直接以备注的形式置入 ELF 文件自身，以显式识别文件来源。与 RPM 数据库所提供的信息不同，这一信息可直接通过对文件本身操作取出，并不依赖于任何其它管理工具。启用该开关后，ELF 文件将包含形如下文的备注区：
+
+```
+$ objdump -s -j .note.package /usr/lib64/libffi.so.8
+
+/usr/lib64/libffi.so.8:     file format elf64-x86-64
+
+Contents of section .note.package:
+ 02fc 04000000 8c000000 7e1afeca 46444f00  ........~...FDO.
+ 030c 7b227479 7065223a 2272706d 222c226e  {"type":"rpm","n
+ 031c 616d6522 3a226c69 62666669 222c2276  ame":"libffi","v
+ 032c 65727369 6f6e223a 22332e34 2e372d32  ersion":"3.4.7-2
+ 033c 2e6f6532 35303322 2c226172 63686974  .oe2503","archit
+ 034c 65637475 7265223a 22783836 5f363422  ecture":"x86_64"
+ 035c 2c226f73 43706522 3a226370 653a2f6f  ,"osCpe":"cpe:/o
+ 036c 3a6f7065 6e45756c 65723a6f 70656e45  :openEuler:openE
+ 037c 756c6572 3a32302e 30334c54 533a6761  uler:20.03LTS:ga
+ 038c 3a736572 76657222 7d000000           :server"}.
+
+$ readelf --notes /usr/bin/assimp | grep "description data" | sed -e "s/\s*description data: //g" -e "s/ //g" | xxd -p -r | jq
+{
+  "type": "rpm",
+  "name": "assimp",
+  "version": "5.3.1-8.oe2503",
+  "architecture": "x86_64",
+  "osCpe": "cpe:/o:openEuler:openEuler:20.03LTS:ga:server"
+}
+```
+该信息亦可被`systemd`的`coredumpctl`工具所捕捉，以便在排错时迅速确认文件来源。
+
+**禁用说明**：
+部分软件包使用 ld 等链接器生成的不是 ELF 格式文件，则这一开关可能对其有影响。如软件包需要禁用此开关，可自行在 spec 中增加下列语句：
+```
+%undefine _package_note_flags
+```
+
+**参考链接**：
+
+- https://fedoraproject.org/wiki/Changes/Package_information_on_ELF_objects
