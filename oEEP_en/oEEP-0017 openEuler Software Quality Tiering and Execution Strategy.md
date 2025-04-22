@@ -4,7 +4,7 @@ Type:           Process
 Abstract:       Software quality tiering strategy
 Author:         Fan Jiachen <fanjiachen3@huawei.com>
 Status:         Initial
-No:             oEEP-0014
+No:             oEEP-0017
 Create_time:    2023-10-14
 Update_time:    2023-10-14
 ---
