@@ -4,7 +4,7 @@ Type:           Process
 Abstract:       Enhancement of existing vulnerability fixing process for hot patch management
 Author:         Hu Feng <solar.hu@huawei.com>
 Status:         Initial
-No:             oEEP-0004
+No:             oEEP-0008
 Create_time:    2023-05-23
 Update_time:    2023-07-11
 ---
