@@ -6,7 +6,7 @@
 状态:     初始化
 编号:     oEEP-0021
 创建日期: 2024-11-12
-修订日期: 2025-03-10
+修订日期: 2025-04-25
 ---
 
 ## 背景
@@ -47,6 +47,16 @@ upstream 清单中每个元素代表软件包上游版本信息，以关系字�
 3. ```(\d+\.\d+\.\d+)```: 这是一个捕获组，用于匹配并捕获具体的版本号。\d+匹配一个或多个数字字符，.在这里是字面量点字符（表示版本号中的分隔符），由于.在正则表达式中有特殊含义（匹配任意单个字符），所以需要使用\进行转义以表示其字面量意义。因此，\d+\.\d+\.\d+匹配形如1.2.3的版本号，其中每个数字部分至少有一位数字
 
 这段正则表达式用于匹配形如“Alluxio 1.2.3”或“v1.2.3”的字符串，并捕获其中的版本号“1.2.3”。如果字符串包含“Alluxio ”前缀，该前缀将被忽略，只有版本号部分被捕获。
+
+另一种情况是 gitlab。利用 gitlab.com 或私有部署的 gitlab 管理的软件仓库，可以指定如下的代码仓描述文件：
+```
+name: libei
+upstream:
+  homepage: https://gitlab.freedesktop.org/libinput/libei
+  regex: (\d+\.\d+\.\d+)
+  version_url: https://gitlab.freedesktop.org/api/v4/projects/libinput%2Flibei/repository/tags
+```
+其中`version_url`是 gitlab 的接口地址，这一地址应返回带有版本tag的json响应。
 
 
 ## 用户如何查看上游软件包版本
