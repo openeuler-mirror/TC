@@ -35,7 +35,7 @@
 | 0020 | S,A | [openEuler源码树与构建树分离策略](oEEP-0020%20openEuler源码树与构建树分离策略.md) | Funda Wang (fundawang at yeah.net) | 2024-10-23 |
 | 0021 | P,I | [openEuler软件包版本监控配置](oEEP-0021%20openEuler软件包版本监控配置.md) | 翟文杰(zwjsec at huawei.com) | 2025-03-10 |
 | 0022 | D,P | [openEuler多版本包管理规范](oEEP-0022%20openEuler多版本包管理规范.md) | 刘恺(kai.liu at windriver.com) | 2025-04-01 |
-| 0023 | D,I | [大型套组软件管理规范](oEEP-0023%20大型套组软件管理规范.md) | Eustace Wang <eusteuc@outlook.com> | 2025-06-04 |
+| 0023 | D,I | [大型套组软件管理规范](oEEP-0023%20大型套组软件管理规范.md) | Eustace Wang <eusteuc at outlook.com> | 2025-06-04 |
 | 0024 | D,P | [openEuler non-free软件社区发布机制](oEEP-0024%20openEuler%20non-free软件社区发布机制.md)  | 吴峰光(wu_fengguang at openeuler.sh),范佳臣@disnight (fanjiachen3 at huawei.com), 杜开田(jimmy_hero at openeuler.sh)| 2025-06-11 |
 | 0025 | D,I | [openEuler社区AI辅助代码提交规范](oEEP-0025%20openEuler社区AI辅助代码提交规范.md) | Jianmin Wang (hi at jimmie.me) | 2026-02-02 |
 
